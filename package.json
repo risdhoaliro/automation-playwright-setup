@@ -15,8 +15,10 @@
     "typescript": "^5.8.3"
   },
   "scripts": {
-    "generate:report": "npx allure generate allure-results -o allure-report --clean",
-    "build": "npm run generate:report && cp -R allure-report public"
+    "test": "npx playwright test",
+    "test:allure": "npx playwright test --reporter=line,allure-playwright",
+    "report": "npx allure generate allure-results -o allure-report --clean",
+    "build": "npm run report"
   }
 }
 
