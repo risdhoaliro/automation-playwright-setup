@@ -1,0 +1,8 @@
+{
+    "builds": [
+      { "src": "allure-report/**/*", "use": "@vercel/static" }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "/allure-report/$1" }
+    ]
+  }  
