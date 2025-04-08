@@ -15,7 +15,8 @@
     "typescript": "^5.8.3"
   },
   "scripts": {
-    "build": "npx allure generate allure-results --clean --output allure-report"
+    "build": "npx allure generate allure-results --clean --output allure-report",
+    "report": "npx allure serve allure-results"
   }
 }
 
