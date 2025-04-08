@@ -2,7 +2,6 @@
   "name": "example-playwright-ts",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -14,5 +13,9 @@
     "allure-commandline": "^2.33.0",
     "allure-playwright": "^3.2.1",
     "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "build": "npx allure generate allure-results --clean --output allure-report"
   }
 }
+
