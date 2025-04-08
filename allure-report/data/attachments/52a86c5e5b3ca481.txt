@@ -1,0 +1,95 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Profile Tests >> Admin Profile Tests > Password Management Tests >> should be able to change password
+- Location: /Applications/example-playwright-ts/Tests/profile.test.ts:214:13
+
+# Error details
+
+```
+TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('//input[@id="username"]') to be visible
+
+    at LoginPage.loginWithCredentials (/Applications/example-playwright-ts/Pages/Login/key_login.ts:22:38)
+    at setupPasswordManagement (/Applications/example-playwright-ts/Tests/profile.test.ts:45:25)
+    at /Applications/example-playwright-ts/Tests/profile.test.ts:194:13
+```
+
+# Test source
+
+```ts
+   1 | import { Page } from '@playwright/test';
+   2 | import { BasePage } from '@fixtures/basePage';
+   3 | import { LoginElements } from './el_login';
+   4 | import data from "@general/data";
+   5 | import { expect } from "@playwright/test";
+   6 | import { waitTime } from "@general/constants";
+   7 |
+   8 | export class LoginPage extends BasePage {
+   9 |     private readonly elements: LoginElements;
+  10 |
+  11 |     constructor(page: Page) {
+  12 |         super(page);
+  13 |         this.elements = new LoginElements(page);
+  14 |     }
+  15 |
+  16 |     async gotoLoginPage() {
+  17 |         await this.page.goto("/");
+  18 |     }
+  19 |
+  20 |     async loginWithCredentials(userName: string, password: string, isNegativeTest: boolean = false) {
+  21 |         // Tunggu hingga elemen login terlihat
+> 22 |         await this.elements.userName.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+     |                                      ^ TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+  23 |         await this.elements.password.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  24 |         await this.elements.loginButton.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  25 |
+  26 |         // Isi form login
+  27 |         await this.elements.userName.fill(userName);
+  28 |         await this.elements.password.fill(password);
+  29 |         
+  30 |         // Klik login
+  31 |         await this.elements.loginButton.click();
+  32 |
+  33 |         if (!isNegativeTest) {
+  34 |             // Untuk test positif, tunggu redirect ke halaman map
+  35 |             let retryCount = 0;
+  36 |             const maxRetries = 5;
+  37 |             
+  38 |             while (retryCount < maxRetries) {
+  39 |                 try {
+  40 |                     await expect(this.page).toHaveURL(/map/, { timeout: waitTime.MEDIUM });
+  41 |                     break; // Keluar dari loop jika redirect berhasil
+  42 |                 } catch (error) {
+  43 |                     retryCount++;
+  44 |                     if (retryCount === maxRetries) {
+  45 |                         throw new Error(`Gagal redirect ke halaman map setelah ${maxRetries} percobaan`);
+  46 |                     }
+  47 |                     console.log(`Percobaan login ke-${retryCount} gagal, mencoba lagi...`);
+  48 |                     await this.page.waitForTimeout(waitTime.MEDIUM);
+  49 |                 }
+  50 |             }
+  51 |         }
+  52 |         // Untuk test negatif, tidak perlu menunggu redirect
+  53 |     }
+  54 |
+  55 |     async getSuccessMessageLogin() {
+  56 |         const message = this.page.getByText(data.LoginData.successMessageLogin);
+  57 |         await message.waitFor({ state: 'visible' });
+  58 |         return message;
+  59 |     }
+  60 |
+  61 |     async getErrorMessage() {
+  62 |         const message = this.page.getByText(data.LoginData.errorMessageLogin);
+  63 |         await message.waitFor({ state: 'visible' });
+  64 |         return message;
+  65 |     }
+  66 | }
+  67 |
+```

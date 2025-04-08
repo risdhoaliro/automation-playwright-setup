@@ -1,0 +1,49 @@
+{
+    "LoginData": {
+        "validDataAdmin": {
+            "userName": "qaautomationadmin",
+            "password": "password"
+        },
+        "validMitraData": {
+            "userName": "qacctv1",
+            "password": "password"
+        },
+        "invalidData": {
+            "userName": "adminn",
+            "password": "password"
+        },
+        "successMessageLogin": "Login success",
+        "errorMessageLogin": "Login failed"
+    },
+    "ChangePasswordData": {
+        "adminAccount": {
+            "userName": "automationCPADMIN",
+            "initialPassword": "password",
+            "newPassword": "newPassword",
+            "wrongConfirmation": "wrongPassword123"
+        },
+        "mitraAccount": {
+            "userName": "automationCPMITRA",
+            "initialPassword": "password",
+            "newPassword": "newPassword",
+            "wrongConfirmation": "wrongPassword123"
+        },
+        "messages": {
+            "success": "Password changed successfully.",
+            "error": {
+                "passwordMismatch": "New password and confirmation do not match. Try Again"
+            }
+        }
+    },
+    "profileData": {
+        "validProfilePicture": "../Fixtures/testprofile.jpg",
+        "largeProfilePicture": "../Fixtures/largeImage.png",
+        "messages": {
+            "successImageUpdate": "Image uploaded successfully.",
+            "successProfileUpdate": "Data Updated Successfully!",
+            "error": {
+                "fileTooBig": "File size must not be bigger than 500.00 KB,"
+            }
+        }
+    }
+}

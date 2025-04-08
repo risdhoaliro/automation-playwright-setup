@@ -1,0 +1,309 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Profile Tests >> Admin Profile Tests >> Profile Picture Tests >> Upload Profile Picture With Invalid Image
+- Location: /Applications/example-playwright-ts/Tests/profile.test.ts:104:17
+
+# Error details
+
+```
+TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  - waiting for getByText('File size must not be bigger than 500.00 KB,') to be visible
+
+    at ProfilePage.getErrorMessageUploadImageInValid (/Applications/example-playwright-ts/Pages/Profile/key_profile.ts:111:23)
+    at /Applications/example-playwright-ts/Tests/profile.test.ts:114:60
+    at /Applications/example-playwright-ts/Tests/profile.test.ts:113:28
+```
+
+# Page snapshot
+
+```yaml
+- button "Menu":
+  - img "Menu"
+- link "Nearon":
+  - img "Nearon"
+- separator
+- text: Theme
+- switch "moon sun":
+  - img "moon"
+  - img "sun"
+- button
+- separator
+- link "avatar Nakia Administrator":
+  - img "avatar"
+  - text: Nakia Administrator
+- button "Org Settings":
+  - img "Org Settings"
+- button "Privacy & Security":
+  - img "Privacy & Security"
+- button "Sensor Management":
+  - img "Sensor Management"
+- button "Device Management":
+  - img "Device Management"
+- button "poweroff":
+  - img "poweroff"
+- main:
+  - navigation:
+    - list:
+      - listitem:
+        - link "My Profile":
+          - heading "My Profile" [level=5]
+  - heading "Profile Picture" [level=5]
+  - separator
+  - img "Nakia"
+  - text: Upload New Avatar Choose file.. Recommended in JPG, JPEG or PNG format. The maximum file size allowed is 1Mb
+  - heading "Profile Management" [level=5]
+  - button "Update"
+  - separator
+  - text: "* Name"
+  - textbox "* Name" [disabled]: Nakia
+  - text: "* Username"
+  - textbox "* Username" [disabled]: qaautomationadmin
+  - text: "* Email"
+  - textbox "* Email" [disabled]: Moises59@yahoo.com
+  - separator
+  - text: "* Whatsapp Number"
+  - textbox [disabled]: "08781374139103"
+  - text: "* Telegram Account ID"
+  - textbox [disabled]: Lavonne73
+  - heading "Change Password" [level=5]
+  - separator
+  - text: "* Current Password"
+  - textbox "* Current Password"
+  - img "eye-invisible"
+  - text: "* New Password"
+  - textbox "* New Password"
+  - img "eye-invisible"
+  - text: "* New Password Confirmation"
+  - textbox "* New Password Confirmation"
+  - img "eye-invisible"
+  - button "Save Password" [disabled]
+  - heading "Activity Log" [level=5]
+  - text: View and manage your activity log
+  - separator
+- alert
+- dialog "Crop Your Photo":
+  - text: Crop Your Photo
+  - img
+  - separator
+  - img
+  - slider
+  - img
+  - button "Cancel" [disabled]
+  - button "loading Save" [disabled]:
+    - img "loading"
+    - text: Save
+```
+
+# Test source
+
+```ts
+   11 |     whatsappNumber: string;
+   12 |     telegramUsername: string;
+   13 | }
+   14 |
+   15 | export class ProfilePage extends BasePage {
+   16 |     private readonly elements: ProfileElements;
+   17 |
+   18 |     constructor(page: Page) {
+   19 |         super(page);
+   20 |         this.elements = new ProfileElements(page);
+   21 |     }
+   22 |
+   23 |     async gotoProfilePage() {
+   24 |         await this.elements.profileMenu.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   25 |         await this.elements.profileMenu.click();
+   26 |         await this.page.waitForURL('**/profile', { timeout: waitTime.MEDIUM });
+   27 |     }
+   28 |
+   29 |     // Profile Picture Methods
+   30 |     async uploadProfilePicture(filePath: string) {
+   31 |         await this.elements.chooseFileButton.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   32 |         const [fileChooser] = await Promise.all([
+   33 |             this.page.waitForEvent('filechooser'),
+   34 |             this.elements.chooseFileButton.click()
+   35 |         ]);
+   36 |         await fileChooser.setFiles(filePath);
+   37 |     }
+   38 |
+   39 |     async savePhotoProfileButton() {
+   40 |         const button = this.elements.savePhotoProfileButton;
+   41 |         await button.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   42 |         await button.click();
+   43 |     }
+   44 |
+   45 |     async getProfilePicturePreview() {
+   46 |         const preview = this.elements.profilePicturePreview;
+   47 |         await preview.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   48 |         return preview;
+   49 |     }
+   50 |
+   51 |     // Update Profile Methods
+   52 |     async clickUpdateProfileButton() {
+   53 |         await this.elements.updateButton.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   54 |         await this.elements.updateButton.click();
+   55 |     }
+   56 |
+   57 |     async getUpdateProfileModal() {
+   58 |         return this.elements.updateProfileModal;
+   59 |     }
+   60 |
+   61 |     // Clear field methods
+   62 |     private async clearProfileFields() {
+   63 |         await this.elements.nameInput.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   64 |         await this.elements.nameInput.clear();
+   65 |         
+   66 |         await this.elements.emailInput.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   67 |         await this.elements.emailInput.clear();
+   68 |         
+   69 |         await this.elements.whatsappNumberInput.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   70 |         await this.elements.whatsappNumberInput.clear();
+   71 |         
+   72 |         await this.elements.telegramUsernameInput.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   73 |         await this.elements.telegramUsernameInput.clear();
+   74 |
+   75 |         await this.verifyFieldsAreEmpty();
+   76 |     }
+   77 |
+   78 |     private async verifyFieldsAreEmpty() {
+   79 |         await expect(this.elements.nameInput).toHaveValue('');
+   80 |         await expect(this.elements.emailInput).toHaveValue('');
+   81 |         await expect(this.elements.whatsappNumberInput).toHaveValue('');
+   82 |         await expect(this.elements.telegramUsernameInput).toHaveValue('');
+   83 |     }
+   84 |
+   85 |     async fillUpdateProfileForm(data: UpdateProfileData) {
+   86 |         await this.clearProfileFields();
+   87 |         await this.elements.nameInput.fill(data.name);
+   88 |         await this.elements.emailInput.fill(data.email);
+   89 |         await this.elements.whatsappNumberInput.fill(data.whatsappNumber);
+   90 |         await this.elements.telegramUsernameInput.fill(data.telegramUsername);
+   91 |     }
+   92 |
+   93 |     async clickSaveChangesButton() {
+   94 |         await this.elements.saveChangesButton.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   95 |         await this.elements.saveChangesButton.click();
+   96 |     }
+   97 |
+   98 |     async clickCancelButton() {
+   99 |         await this.elements.cancelButton.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  100 |         await this.elements.cancelButton.click();
+  101 |     }
+  102 |
+  103 |     async getSuccessMessageUploadImageValid() {
+  104 |         const message = this.page.getByText(data.profileData.messages.successImageUpdate);
+  105 |         await message.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  106 |         return message;
+  107 |     }
+  108 |
+  109 |     async getErrorMessageUploadImageInValid() {
+  110 |         const message = this.page.getByText(data.profileData.messages.error.fileTooBig);
+> 111 |         await message.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+      |                       ^ TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+  112 |         return message;
+  113 |     }
+  114 |
+  115 |     async getSuccessMessageUpdateProfile() {
+  116 |         const message = this.page.getByText(data.profileData.messages.successProfileUpdate);
+  117 |         await message.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  118 |         return message;
+  119 |     }
+  120 |
+  121 |     // Password Change Methods
+  122 |     async changePassword(currentPassword: string, newPassword: string, confirmPassword: string) {
+  123 |         await test.step('Change Password Process', async () => {
+  124 |             let retries = 5;
+  125 |             let isVisible = false;
+  126 |
+  127 |             while (retries > 0 && !isVisible) {
+  128 |                 try {
+  129 |                     await this.elements.changePasswordSection.scrollIntoViewIfNeeded();
+  130 |                     await this.elements.currentPasswordInput.waitFor({ state: 'visible', timeout: waitTime.SHORT });
+  131 |                     isVisible = true;
+  132 |                 } catch (error) {
+  133 |                     retries--;
+  134 |                     console.log(`Retry scrolling to change password section... (${retries} attempts left)`);
+  135 |                     if (retries === 0) throw error;
+  136 |                 }
+  137 |             }
+  138 |
+  139 |             await test.step('Fill Password Form', async () => {
+  140 |                 await this.elements.currentPasswordInput.fill(currentPassword);
+  141 |                 await this.elements.newPasswordInput.fill(newPassword);
+  142 |                 await this.elements.confirmPasswordInput.fill(confirmPassword);
+  143 |                 await this.elements.savePasswordButton.click();
+  144 |             });
+  145 |         });
+  146 |     }
+  147 |
+  148 |     async getSuccessMessageChangePassword() {
+  149 |         const message = this.page.getByText(data.ChangePasswordData.messages.success);
+  150 |         await message.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  151 |         return message;
+  152 |     }
+  153 |
+  154 |     async getPasswordMismatchError() {
+  155 |         const message = this.page.getByText(data.ChangePasswordData.messages.error.passwordMismatch);
+  156 |         await message.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  157 |         return message;
+  158 |     }
+  159 |
+  160 |     // Activity Log Methods
+  161 |     async isActivityLogSectionVisible(): Promise<boolean> {
+  162 |         const visibility = await this.elements.activityLogSection.isVisible();
+  163 |         console.log(visibility ? 'Permission Activity Log aktif' : 'Permission Activity Log belum diaktifkan');
+  164 |         return visibility;
+  165 |     }
+  166 |
+  167 |     async openActivityLog() {
+  168 |         await test.step('Open Activity Log Section', async () => {
+  169 |             await this.elements.activityLogSection.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  170 |             await this.elements.activityLogSection.click();
+  171 |             
+  172 |             try {
+  173 |                 await this.elements.activityLogData.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  174 |                 const logText = await this.elements.activityLogData.textContent();
+  175 |                 console.log('Activity Log Data:', { text: logText, timestamp: new Date().toISOString() });
+  176 |             } catch (error) {
+  177 |                 console.log('No Activity Log Data visible');
+  178 |                 throw error;
+  179 |             }
+  180 |         });
+  181 |     }
+  182 |
+  183 |     // Getters for verification
+  184 |     async getDisplayedNameValue() {
+  185 |         return await this.elements.getDisplayedNameValue();
+  186 |     }
+  187 |
+  188 |     async getDisplayedEmailValue() {
+  189 |         return await this.elements.getDisplayedEmailValue();
+  190 |     }
+  191 |
+  192 |     async getDisplayedWhatsappValue() {
+  193 |         return await this.elements.getDisplayedWhatsappValue();
+  194 |     }
+  195 |
+  196 |     async getDisplayedTelegramValue() {
+  197 |         return await this.elements.getDisplayedTelegramValue();
+  198 |     }
+  199 |
+  200 |     // Verification Methods
+  201 |     async verifyProfileData(profileData: UpdateProfileData) {
+  202 |         await this.page.waitForTimeout(waitTime.SHORT);
+  203 |         let retries = 3;
+  204 |         let success = false;
+  205 |
+  206 |         while (retries > 0 && !success) {
+  207 |             try {
+  208 |                 const displayedName = await this.getDisplayedNameValue();
+  209 |                 const displayedEmail = await this.getDisplayedEmailValue();
+  210 |                 const displayedWhatsapp = await this.getDisplayedWhatsappValue();
+  211 |                 const displayedTelegram = await this.getDisplayedTelegramValue();
+```

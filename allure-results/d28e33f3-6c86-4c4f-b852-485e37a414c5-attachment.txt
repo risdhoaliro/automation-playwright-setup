@@ -1,0 +1,16 @@
+Starting Mitra Profile Tests setup...
+Starting Mitra Login setup...
+Logging in as mitra...
+Mitra Profile Tests setup completed
+Name Comparison:
+Expected: "Lelah"
+Actual  : "Lelah"
+Email Comparison:
+Expected: "Steve15@gmail.com"
+Actual  : "Steve15@gmail.com"
+WhatsApp Number Comparison:
+Expected: "08788416874209"
+Actual  : "08788416874209"
+Telegram Username Comparison:
+Expected: "Keenan_Hintz3"
+Actual  : "Keenan_Hintz3"

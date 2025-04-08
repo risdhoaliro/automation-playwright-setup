@@ -1,0 +1,77 @@
+image: mcr.microsoft.com/playwright:v1.42.1
+
+variables:
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .npm/
+    - node_modules/
+
+stages:
+  - setup
+  - test_staging
+  - test_production
+
+install_dependencies:
+  stage: setup
+  script:
+    - npm ci
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1 day
+
+regression_test_staging:
+  stage: test_staging
+  script:
+    - npx playwright install --with-deps
+    - ENV=staging npx playwright test --project="Nearon In Chrome"
+  artifacts:
+    when: always
+    paths:
+      - playwright-report/
+      - test-results/
+      - allure-results/
+    reports:
+      junit: playwright-report/junit.xml
+    expire_in: 2 weeks
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule" || $CI_COMMIT_BRANCH == "main"
+  tags:
+    - docker
+
+regression_test_production:
+  stage: test_production
+  script:
+    - npx playwright install --with-deps
+    - ENV=production npx playwright test --project="Nearon In Chrome"
+  artifacts:
+    when: always
+    paths:
+      - playwright-report/
+      - test-results/
+      - allure-results/
+    reports:
+      junit: playwright-report/junit.xml
+    expire_in: 2 weeks
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+      when: manual
+  tags:
+    - docker
+
+generate_allure_report:
+  image: frankescobar/allure-docker-service
+  stage: .post
+  script:
+    - allure generate allure-results -o allure-report --clean
+  artifacts:
+    paths:
+      - allure-report
+    expire_in: 2 weeks
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule" || $CI_COMMIT_BRANCH == "main"
+  tags:
+    - docker 

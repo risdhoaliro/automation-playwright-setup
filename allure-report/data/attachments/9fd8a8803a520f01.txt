@@ -1,0 +1,15 @@
+Starting Mitra Profile Tests setup...
+Logging in as mitra...
+Mitra Profile Tests setup completed
+Name Comparison:
+Expected: "Amber"
+Actual  : "Amber"
+Email Comparison:
+Expected: "Verda99@yahoo.com"
+Actual  : "Verda99@yahoo.com"
+WhatsApp Number Comparison:
+Expected: "08782782574537"
+Actual  : "08782782574537"
+Telegram Username Comparison:
+Expected: "Kristian.Treutel"
+Actual  : "Kristian.Treutel"

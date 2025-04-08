@@ -1,0 +1,6 @@
+Starting Profile Test Suite
+Starting Admin Profile Tests setup...
+Logging in as admin...
+Admin Profile Tests setup completed
+Permission Activity Log belum diaktifkan
+Permission Activity Log belum diaktifkan

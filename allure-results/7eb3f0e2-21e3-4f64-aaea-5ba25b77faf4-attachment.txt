@@ -1,0 +1,6 @@
+Starting Profile Test Suite
+Starting Mitra Profile Tests setup...
+Logging in as mitra...
+Mitra Profile Tests setup completed
+Permission Activity Log belum diaktifkan
+Permission Activity Log belum diaktifkan

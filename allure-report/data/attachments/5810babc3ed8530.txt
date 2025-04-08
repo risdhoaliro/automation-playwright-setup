@@ -1,0 +1,7 @@
+Starting Profile Test Suite
+Starting Admin Profile Tests setup...
+Logging in as admin...
+Admin Profile Tests setup completed
+Permission Activity Log aktif
+Permission Activity Log aktif
+Activity Log Data: { text: 'Login User', timestamp: '2025-04-07T10:32:43.353Z' }

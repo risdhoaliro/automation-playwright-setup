@@ -1,0 +1,226 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Profile Tests >> Admin Profile Tests > Password Management Tests >> should be able to change password
+- Location: /Applications/example-playwright-ts/Tests/profile.test.ts:214:13
+
+# Error details
+
+```
+Error: locator.waitFor: Test timeout of 60000ms exceeded.
+Call log:
+  - waiting for getByText('Login success') to be visible
+
+    at LoginPage.getSuccessMessageLogin (/Applications/example-playwright-ts/Pages/Login/key_login.ts:92:23)
+    at /Applications/example-playwright-ts/Tests/profile.test.ts:231:56
+    at /Applications/example-playwright-ts/Tests/profile.test.ts:228:13
+```
+
+# Page snapshot
+
+```yaml
+- button "Menu":
+  - img "Menu"
+- link "Nearon":
+  - img "Nearon"
+- separator
+- text: Theme
+- switch "moon sun":
+  - img "moon"
+  - img "sun"
+- button
+- separator
+- link "avatar automationCPADMIN Administrator":
+  - img "avatar"
+  - text: automationCPADMIN Administrator
+- button "Org Settings":
+  - img "Org Settings"
+- button "Privacy & Security":
+  - img "Privacy & Security"
+- button "Sensor Management":
+  - img "Sensor Management"
+- button "Device Management":
+  - img "Device Management"
+- button "poweroff":
+  - img "poweroff"
+- main:
+  - navigation:
+    - list:
+      - listitem:
+        - link "Org Settings"
+  - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - link "Leaflet"
+  - text: ©
+  - link "OpenStreetMap"
+  - text: contributors
+  - img "search"
+  - combobox "Search location by district"
+  - button "Search"
+  - button "plus":
+    - img "plus"
+  - button "minus":
+    - img "minus"
+  - button "aim":
+    - img "aim"
+  - button "eye":
+    - img "eye"
+  - img "project"
+  - text: Project
+  - heading "9" [level=3]
+  - img "project"
+  - text: Node
+  - heading "266" [level=3]
+  - img "project"
+  - text: Sensor
+  - heading "2956" [level=3]
+  - img "project"
+  - text: Actuator
+  - heading "5" [level=3]
+  - img "project"
+  - text: CCTV
+  - heading "21" [level=3]
+  - img "Nearon"
+  - text: Copyright © 2024 Nearon Powered by
+  - link "Synapsis.id"
+  - text: ", All Rights Reserved build version 0.0.6"
+  - link "Synapsis LinkedIn":
+    - img "Synapsis LinkedIn"
+  - link "Synapsis Instagram":
+    - img "Synapsis Instagram"
+  - link "Synapsis Website":
+    - img "Synapsis Website"
+- alert: Nearon Admin
+```
+
+# Test source
+
+```ts
+   1 | import { Page } from '@playwright/test';
+   2 | import { BasePage } from '@fixtures/basePage';
+   3 | import { LoginElements } from './el_login';
+   4 | import data from "@general/data";
+   5 | import { expect } from "@playwright/test";
+   6 | import { waitTime } from "@general/constants";
+   7 |
+   8 | export class LoginPage extends BasePage {
+   9 |     private readonly elements: LoginElements;
+   10 |
+   11 |     constructor(page: Page) {
+   12 |         super(page);
+   13 |         this.elements = new LoginElements(page);
+   14 |     }
+   15 |
+   16 |     async gotoLoginPage() {
+   17 |         let retryCount = 0;
+   18 |         const maxRetries = 5;
+   19 |
+   20 |         while (retryCount < maxRetries) {
+   21 |             try {
+   22 |                 await this.page.goto("/");
+   23 |                 
+   24 |                 // Tunggu hingga form login terlihat
+   25 |                 await this.elements.userName.waitFor({ 
+   26 |                     state: 'visible', 
+   27 |                     timeout: waitTime.MEDIUM 
+   28 |                 });
+   29 |                 
+   30 |                 // Verifikasi form login lengkap
+   31 |                 await this.elements.password.waitFor({ 
+   32 |                     state: 'visible', 
+   33 |                     timeout: waitTime.MEDIUM 
+   34 |                 });
+   35 |                 await this.elements.loginButton.waitFor({ 
+   36 |                     state: 'visible', 
+   37 |                     timeout: waitTime.MEDIUM 
+   38 |                 });
+   39 |                 
+   40 |                 return; // Keluar dari loop jika berhasil
+   41 |             } catch (error) {
+   42 |                 retryCount++;
+   43 |                 console.log(`Retry loading login page... (${retryCount}/${maxRetries})`);
+   44 |                 
+   45 |                 if (retryCount === maxRetries) {
+   46 |                     throw new Error(`Failed to load login page after ${maxRetries} attempts`);
+   47 |                 }
+   48 |                 
+   49 |                 // Tunggu sebentar sebelum mencoba lagi
+   50 |                 await this.page.waitForTimeout(waitTime.MEDIUM);
+   51 |             }
+   52 |         }
+   53 |     }
+   54 |
+   55 |     async loginWithCredentials(userName: string, password: string, isNegativeTest: boolean = false) {
+   56 |         // Tunggu hingga elemen login terlihat
+   57 |         await this.elements.userName.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   58 |         await this.elements.password.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   59 |         await this.elements.loginButton.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   60 |
+   61 |         // Isi form login
+   62 |         await this.elements.userName.fill(userName);
+   63 |         await this.elements.password.fill(password);
+   64 |         
+   65 |         // Klik login
+   66 |         await this.elements.loginButton.click();
+   67 |
+   68 |         if (!isNegativeTest) {
+   69 |             // Untuk test positif, tunggu redirect ke halaman map
+   70 |             let retryCount = 0;
+   71 |             const maxRetries = 5;
+   72 |             
+   73 |             while (retryCount < maxRetries) {
+   74 |                 try {
+   75 |                     await expect(this.page).toHaveURL(/map/, { timeout: waitTime.MEDIUM });
+   76 |                     break; // Keluar dari loop jika redirect berhasil
+   77 |                 } catch (error) {
+   78 |                     retryCount++;
+   79 |                     if (retryCount === maxRetries) {
+   80 |                         throw new Error(`Gagal redirect ke halaman map setelah ${maxRetries} percobaan`);
+   81 |                     }
+   82 |                     console.log(`Percobaan login ke-${retryCount} gagal, mencoba lagi...`);
+   83 |                     await this.page.waitForTimeout(waitTime.MEDIUM);
+   84 |                 }
+   85 |             }
+   86 |         }
+   87 |         // Untuk test negatif, tidak perlu menunggu redirect
+   88 |     }
+   89 |
+   90 |     async getSuccessMessageLogin() {
+   91 |         const message = this.page.getByText(data.LoginData.successMessageLogin);
+>  92 |         await message.waitFor({ state: 'visible' });
+      |                       ^ Error: locator.waitFor: Test timeout of 60000ms exceeded.
+   93 |         return message;
+   94 |     }
+   95 |
+   96 |     async getErrorMessage() {
+   97 |         const message = this.page.getByText(data.LoginData.errorMessageLogin);
+   98 |         await message.waitFor({ state: 'visible' });
+   99 |         return message;
+  100 |     }
+  101 | }
+  102 |
+```

@@ -1,0 +1,16 @@
+Starting Profile Test Suite
+Starting Mitra Profile Tests setup...
+Logging in as mitra...
+Mitra Profile Tests setup completed
+Name Comparison:
+Expected: "Griffin"
+Actual  : "Griffin"
+Email Comparison:
+Expected: "Valentina_Bechtelar30@gmail.com"
+Actual  : "Valentina_Bechtelar30@gmail.com"
+WhatsApp Number Comparison:
+Expected: "08781519241209"
+Actual  : "08781519241209"
+Telegram Username Comparison:
+Expected: "Ron.Tremblay"
+Actual  : "Ron.Tremblay"

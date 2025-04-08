@@ -1,0 +1,16 @@
+Starting Admin Profile Tests setup...
+Starting Admin Login setup...
+Logging in as admin...
+Admin Profile Tests setup completed
+Name Comparison:
+Expected: "Jennings"
+Actual  : "Jennings"
+Email Comparison:
+Expected: "Pedro9@yahoo.com"
+Actual  : "Pedro9@yahoo.com"
+WhatsApp Number Comparison:
+Expected: "08782167955818"
+Actual  : "08782167955818"
+Telegram Username Comparison:
+Expected: "Ole_Grimes91"
+Actual  : "Ole_Grimes91"

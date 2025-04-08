@@ -1,0 +1,15 @@
+Starting Admin Profile Tests setup...
+Logging in as admin...
+Admin Profile Tests setup completed
+Name Comparison:
+Expected: "German"
+Actual  : "German"
+Email Comparison:
+Expected: "Ariel.Kirlin5@hotmail.com"
+Actual  : "Ariel.Kirlin5@hotmail.com"
+WhatsApp Number Comparison:
+Expected: "08788279381463"
+Actual  : "08788279381463"
+Telegram Username Comparison:
+Expected: "Hiram80"
+Actual  : "Hiram80"

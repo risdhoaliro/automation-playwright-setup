@@ -1,0 +1,329 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Profile Tests >> Admin Profile Tests > Password Management Tests >> should be able to change password
+- Location: /Applications/example-playwright-ts/Tests/profile.test.ts:214:13
+
+# Error details
+
+```
+Error: Timed out 10000ms waiting for expect(locator).toBeVisible()
+
+Locator: getByText('Login success')
+Expected: visible
+Received: <element(s) not found>
+Call log:
+  - expect.toBeVisible with timeout 10000ms
+  - waiting for getByText('Login success')
+
+    at /Applications/example-playwright-ts/Tests/profile.test.ts:232:46
+    at /Applications/example-playwright-ts/Tests/profile.test.ts:228:13
+```
+
+# Page snapshot
+
+```yaml
+- button "Menu":
+  - img "Menu"
+- link "Nearon":
+  - img "Nearon"
+- separator
+- text: Theme
+- switch "moon sun":
+  - img "moon"
+  - img "sun"
+- button
+- separator
+- link "avatar automationCPADMIN Administrator":
+  - img "avatar"
+  - text: automationCPADMIN Administrator
+- button "Org Settings":
+  - img "Org Settings"
+- button "Privacy & Security":
+  - img "Privacy & Security"
+- button "Sensor Management":
+  - img "Sensor Management"
+- button "Device Management":
+  - img "Device Management"
+- button "poweroff":
+  - img "poweroff"
+- main:
+  - navigation:
+    - list:
+      - listitem:
+        - link "Org Settings"
+  - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - button:
+    - img
+  - link "Leaflet"
+  - text: ©
+  - link "OpenStreetMap"
+  - text: contributors
+  - img "search"
+  - combobox "Search location by district"
+  - button "Search"
+  - button "plus":
+    - img "plus"
+  - button "minus":
+    - img "minus"
+  - button "aim":
+    - img "aim"
+  - button "eye":
+    - img "eye"
+  - img "project"
+  - text: Project
+  - heading "9" [level=3]
+  - img "project"
+  - text: Node
+  - heading "266" [level=3]
+  - img "project"
+  - text: Sensor
+  - heading "2956" [level=3]
+  - img "project"
+  - text: Actuator
+  - heading "5" [level=3]
+  - img "project"
+  - text: CCTV
+  - heading "21" [level=3]
+  - img "Nearon"
+  - text: Copyright © 2024 Nearon Powered by
+  - link "Synapsis.id"
+  - text: ", All Rights Reserved build version 0.0.6"
+  - link "Synapsis LinkedIn":
+    - img "Synapsis LinkedIn"
+  - link "Synapsis Instagram":
+    - img "Synapsis Instagram"
+  - link "Synapsis Website":
+    - img "Synapsis Website"
+- alert: Nearon Admin
+```
+
+# Test source
+
+```ts
+  132 |                 await test.step('Save Profile Changes', async () => {
+  133 |                     await profilePage.clickSaveChangesButton();
+  134 |                 });
+  135 |
+  136 |                 await test.step('Verify Success Message', async () => {
+  137 |                     const successMessage = await profilePage.getSuccessMessageUpdateProfile();
+  138 |                     await expect(successMessage).toBeVisible({ timeout: waitTime.MEDIUM });
+  139 |                 });
+  140 |
+  141 |                 await test.step('Verify Updated Profile Data', async () => {
+  142 |                     await profilePage.verifyProfileData(profileData);
+  143 |                 });
+  144 |             });
+  145 |
+  146 |             test('Cancel Update Profile', async () => {
+  147 |                 await test.step('Open Update Profile Modal', async () => {
+  148 |                     await profilePage.clickUpdateProfileButton();
+  149 |                     const updateProfileModal = await profilePage.getUpdateProfileModal();
+  150 |                     await expect(updateProfileModal).toBeVisible({ timeout: waitTime.MEDIUM });
+  151 |                 });
+  152 |
+  153 |                 await test.step('Click Cancel Button', async () => {
+  154 |                     await profilePage.clickCancelButton();
+  155 |                 });
+  156 |
+  157 |                 await test.step('Verify Modal is Closed', async () => {
+  158 |                     const updateProfileModal = await profilePage.getUpdateProfileModal();
+  159 |                     await expect(updateProfileModal).not.toBeVisible({ timeout: waitTime.MEDIUM });
+  160 |                 });
+  161 |             });
+  162 |         });
+  163 |
+  164 |         test.describe('Activity Log Tests', () => {
+  165 |             test('Verify activity log section visibility based on permission', async () => {
+  166 |                 let isVisible = false;
+  167 |                 
+  168 |                 await test.step('Check Activity Log Permission Status', async () => {
+  169 |                     isVisible = await profilePage.isActivityLogSectionVisible();
+  170 |                 });
+  171 |
+  172 |                 if (!isVisible) {
+  173 |                     await test.step('Log Permission Disabled', async () => {
+  174 |                         console.log('Permission Activity Log belum diaktifkan');
+  175 |                     });
+  176 |                     return;
+  177 |                 }
+  178 |
+  179 |                 await test.step('Log Permission Enabled', async () => {
+  180 |                     console.log('Permission Activity Log aktif');
+  181 |                 });
+  182 |
+  183 |                 await test.step('Open and Verify Activity Log', async () => {
+  184 |                     await profilePage.openActivityLog();
+  185 |                 });
+  186 |             });
+  187 |         });
+  188 |     });
+  189 |
+  190 |     test.describe('Admin Profile Tests > Password Management Tests', () => {
+  191 |         const account = data.ChangePasswordData.adminAccount;
+  192 |         
+  193 |         test.beforeEach(async ({ page }) => {
+  194 |             await setupPasswordManagement(page);
+  195 |             logoutPage = new LogoutPage(page);
+  196 |         });
+  197 |
+  198 |         test('Should validate password confirmation match', async () => {
+  199 |             await test.step('Fill Change Password Form with Mismatched Confirmation', async () => {
+  200 |                 await profilePage.changePassword(
+  201 |                     account.initialPassword,
+  202 |                     account.newPassword,
+  203 |                     account.wrongConfirmation
+  204 |                 );
+  205 |             });
+  206 |
+  207 |             await test.step('Verify Password Mismatch Error', async () => {
+  208 |                 const errorMessage = await profilePage.getPasswordMismatchError();
+  209 |                 await expect(errorMessage).toBeVisible({ timeout: waitTime.MEDIUM });
+  210 |             });
+  211 |             console.log('Success validate password confirmation match');
+  212 |         });
+  213 |
+  214 |         test('should be able to change password', async () => {
+  215 |             await test.step('Fill Change Password Form', async () => {
+  216 |                 await profilePage.changePassword(
+  217 |                     account.initialPassword, 
+  218 |                     account.newPassword, 
+  219 |                     account.newPassword
+  220 |                 );
+  221 |             });
+  222 |
+  223 |             await test.step('Verify Success Message', async () => {
+  224 |                 const successMessage = await profilePage.getSuccessMessageChangePassword();
+  225 |                 await expect(successMessage).toBeVisible({ timeout: waitTime.MEDIUM });
+  226 |             });
+  227 |
+  228 |             await test.step('Verify Can Login with New Password', async () => {
+  229 |                 await logoutPage.performLogout();
+  230 |                 await loginPage.loginWithCredentials(account.userName, account.newPassword);
+  231 |                 const successMessage = await loginPage.getSuccessMessageLogin();
+> 232 |                 await expect(successMessage).toBeVisible({ timeout: waitTime.MEDIUM });
+      |                                              ^ Error: Timed out 10000ms waiting for expect(locator).toBeVisible()
+  233 |             });
+  234 |         });
+  235 |
+  236 |         test.afterAll(async ({ browser }) => {
+  237 |             // Cleaning up Password Management Tests
+  238 |             const context = await browser.newContext();
+  239 |             const page = await context.newPage();
+  240 |             
+  241 |             await test.step('Cleanup Password Management Test', async () => {
+  242 |                 console.log('Cleaning up Password Management Tests');
+  243 |                 
+  244 |                 loginPage = new LoginPage(page);
+  245 |                 await loginPage.gotoLoginPage();
+  246 |                 await loginPage.loginWithCredentials(account.userName, account.newPassword);
+  247 |
+  248 |                 profilePage = new ProfilePage(page);
+  249 |                 await profilePage.gotoProfilePage();
+  250 |                 await profilePage.changePassword(
+  251 |                     account.newPassword,      // current password
+  252 |                     account.initialPassword,  // reset ke password awal
+  253 |                     account.initialPassword   // konfirmasi
+  254 |                 );
+  255 |
+  256 |                 await context.close();
+  257 |             });
+  258 |         });
+  259 |     });
+  260 |
+  261 |     test.describe('Mitra Profile Tests', () => {
+  262 |         test.beforeEach(async ({ page }) => {
+  263 |             await setupMitraProfile(page);
+  264 |         });
+  265 |
+  266 |         test.describe('Profile Picture Tests', () => {
+  267 |             // test('Upload Profile Picture With Valid Image', async () => {
+  268 |             //     await test.step('Select Valid Profile Picture', async () => {
+  269 |             //         await profilePage.uploadProfilePicture(path.join(__dirname, data.profileData.validProfilePicture));
+  270 |             //     });
+  271 |
+  272 |             //     await test.step('Save Profile Picture Changes', async () => {
+  273 |             //         await profilePage.savePhotoProfileButton();
+  274 |             //     });
+  275 |
+  276 |             //     await test.step('Verify Success Upload Message', async () => {
+  277 |             //         const successMessage = await profilePage.getSuccessMessageUploadImageValid();
+  278 |             //         await expect(successMessage).toBeVisible({ timeout: waitTime.MEDIUM });
+  279 |             //     });
+  280 |             // });
+  281 |
+  282 |             test('Upload Profile Picture With Invalid Image', async () => {
+  283 |                 await test.step('Select Invalid Profile Picture', async () => {
+  284 |                     await profilePage.uploadProfilePicture(path.join(__dirname, data.profileData.largeProfilePicture));
+  285 |                 });
+  286 |
+  287 |                 await test.step('Attempt to Save Invalid Picture', async () => {
+  288 |                     await profilePage.savePhotoProfileButton();
+  289 |                 });
+  290 |
+  291 |                 await test.step('Verify Error Message for Invalid Upload', async () => {
+  292 |                     const errorMessage = await profilePage.getErrorMessageUploadImageInValid();
+  293 |                     await expect(errorMessage).toBeVisible({ timeout: waitTime.MEDIUM });
+  294 |                 });
+  295 |             });
+  296 |         });
+  297 |
+  298 |         test.describe('Profile Management Tests', () => {
+  299 |             test('Update Profile with Valid Data', async () => {
+  300 |                 await test.step('Click Update Profile Button', async () => {
+  301 |                     await profilePage.clickUpdateProfileButton();
+  302 |                     const updateProfileModal = await profilePage.getUpdateProfileModal();
+  303 |                     await expect(updateProfileModal).toBeVisible({ timeout: waitTime.MEDIUM });
+  304 |                 });
+  305 |
+  306 |                 await test.step('Fill Update Profile Form', async () => {
+  307 |                     await profilePage.fillUpdateProfileForm(profileData);
+  308 |                 });
+  309 |
+  310 |                 await test.step('Save Profile Changes', async () => {
+  311 |                     await profilePage.clickSaveChangesButton();
+  312 |                 });
+  313 |
+  314 |                 await test.step('Verify Success Message', async () => {
+  315 |                     const successMessage = await profilePage.getSuccessMessageUpdateProfile();
+  316 |                     await expect(successMessage).toBeVisible({ timeout: waitTime.MEDIUM });
+  317 |                 });
+  318 |
+  319 |                 await test.step('Verify Updated Profile Data', async () => {
+  320 |                     await profilePage.verifyProfileData(profileData);
+  321 |                 });
+  322 |             });
+  323 |
+  324 |             test('Cancel Update Profile', async () => {
+  325 |                 await test.step('Open Update Profile Modal', async () => {
+  326 |                     await profilePage.clickUpdateProfileButton();
+  327 |                     const updateProfileModal = await profilePage.getUpdateProfileModal();
+  328 |                     await expect(updateProfileModal).toBeVisible({ timeout: waitTime.MEDIUM });
+  329 |                 });
+  330 |
+  331 |                 await test.step('Click Cancel Button', async () => {
+  332 |                     await profilePage.clickCancelButton();
+```

@@ -1,0 +1,7 @@
+Starting Profile Test Suite
+Starting Mitra Profile Tests setup...
+Logging in as mitra...
+Mitra Profile Tests setup completed
+Permission Activity Log aktif
+Permission Activity Log aktif
+Activity Log Data: { text: 'Login User', timestamp: '2025-04-07T10:43:13.291Z' }

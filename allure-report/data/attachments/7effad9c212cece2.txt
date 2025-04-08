@@ -1,0 +1,16 @@
+Starting Mitra Profile Tests setup...
+Logging in as mitra...
+Percobaan login ke-1 gagal, mencoba lagi...
+Mitra Profile Tests setup completed
+Name Comparison:
+Expected: "Breanna"
+Actual  : "Breanna"
+Email Comparison:
+Expected: "Ethel_Reilly33@yahoo.com"
+Actual  : "Ethel_Reilly33@yahoo.com"
+WhatsApp Number Comparison:
+Expected: "08786408490533"
+Actual  : "08786408490533"
+Telegram Username Comparison:
+Expected: "Nolan.Anderson82"
+Actual  : "Nolan.Anderson82"
