@@ -1,6 +1,0 @@
-Starting Profile Test Suite
-Starting Admin Password Management Tests setup...
-Admin Password Management Tests setup completed
-Success validate password confirmation match
-Cleaning up Password Management Tests
-Profile Test Suite completed.

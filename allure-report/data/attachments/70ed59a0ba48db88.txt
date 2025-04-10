@@ -1,3 +1,0 @@
-Starting Logout Test setup...
-Logout Test setup completed
-Logout Test completed

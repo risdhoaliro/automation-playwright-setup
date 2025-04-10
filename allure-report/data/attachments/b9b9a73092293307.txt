@@ -1,4 +1,0 @@
-Starting Mitra Password Management Tests setup...
-Mitra Password Management Tests setup completed
-Cleaning up Password Management Tests
-Profile Test Suite completed.
