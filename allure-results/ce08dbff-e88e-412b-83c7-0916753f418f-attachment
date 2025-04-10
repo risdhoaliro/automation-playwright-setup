@@ -1,0 +1,255 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: API Key Tests >> Create new API Key with available project with Delete API Key
+- Location: /Applications/automation-nearon-playwright/Tests/apiKey.test.ts:14:9
+
+# Error details
+
+```
+TimeoutError: locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('//span[normalize-space(text())=\'New API Key\']')
+    - locator resolved to <span>New API Key</span>
+  - attempting click action
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - performing click action
+
+    at ApiKeyPage.clickNewApiKey (/Applications/automation-nearon-playwright/Pages/apiKey/key_api_key.ts:53:45)
+    at /Applications/automation-nearon-playwright/Tests/apiKey.test.ts:16:13
+    at /Applications/automation-nearon-playwright/Tests/apiKey.test.ts:15:9
+```
+
+# Page snapshot
+
+```yaml
+- button "Menu":
+  - img "Menu"
+- link "Nearon":
+  - img "Nearon"
+- separator
+- text: Theme
+- switch "moon sun":
+  - img "moon"
+  - img "sun"
+- button
+- separator
+- link "avatar Sydney Administrator":
+  - img "avatar"
+  - text: Sydney Administrator
+- button "Org Settings":
+  - img "Org Settings"
+- button "Privacy & Security":
+  - img "Privacy & Security"
+- button "Sensor Management":
+  - img "Sensor Management"
+- button "Device Management":
+  - img "Device Management"
+- button "poweroff":
+  - img "poweroff"
+- main:
+  - navigation:
+    - list:
+      - listitem:
+        - link "Dashboard"
+      - listitem:
+        - link "Privacy & Security"
+      - listitem:
+        - link "API Key"
+  - heading "API Key" [level=3]
+  - text: Displaying 1 of 1 API key
+  - button "New API Key"
+  - table:
+    - rowgroup:
+      - row "Nomor Project Name API Key Action":
+        - columnheader "Nomor"
+        - columnheader "Project Name"
+        - columnheader "API Key"
+        - columnheader "Action"
+    - rowgroup:
+      - row "1 Gempur Project ct2JN6ReIGuwvuzo":
+        - cell "1"
+        - cell "Gempur Project"
+        - cell "ct2JN6ReIGuwvuzo":
+          - text: ct2JN6ReIGuwvuzo
+          - button
+        - cell:
+          - button
+  - list:
+    - listitem "Previous Page":
+      - button "left" [disabled]:
+        - img "left"
+    - listitem "1"
+    - listitem "Next Page":
+      - button "right" [disabled]:
+        - img "right"
+- alert: Nearon Admin
+- tooltip "Privacy & Security"
+```
+
+# Test source
+
+```ts
+   1 | import { Page } from '@playwright/test';
+   2 | import { BasePage } from '@fixtures/basePage';
+   3 | import { elements_apiKey } from './el_api_key';
+   4 | import { waitTime } from '@general/constants';
+   5 |
+   6 | export class ApiKeyPage extends BasePage {
+   7 |     elements = {
+   8 |         apiKeyTitle: this.page.locator(elements_apiKey.apiKeyTitle),
+   9 |         createApiKeyTitle: this.page.locator(elements_apiKey.createApiKeyTitle),
+   10 |         newApiKeyButton: this.page.locator(elements_apiKey.newApiKeyButton),
+   11 |         createAndViewButton: this.page.locator(elements_apiKey.createAndViewButton),
+   12 |         cancelButton: this.page.locator(elements_apiKey.cancelButton),
+   13 |         copyAPIKEY: this.page.locator(elements_apiKey.copyAPIKEY),
+   14 |         closeButton: this.page.locator(elements_apiKey.closeButton),
+   15 |         projectInput: this.page.locator(elements_apiKey.projectInput),
+   16 |         projectDropdown: this.page.locator(elements_apiKey.projectDropdown),
+   17 |         projectRandomOption: this.page.locator(elements_apiKey.projectRandomOption),
+   18 |         successMessage: this.page.locator(elements_apiKey.successMessage),
+   19 |         errorMessage: this.page.locator(elements_apiKey.errorMessage),
+   20 |         projectRequiredMessage: this.page.locator(elements_apiKey.projectRequiredMessage),
+   21 |         apiKeyMenu: this.page.locator(elements_apiKey.apiKeyMenu),
+   22 |         apiKeyExistsMessage: this.page.locator(elements_apiKey.apiKeyExistsMessage),
+   23 |         deleteSuccessMessage: this.page.locator(elements_apiKey.deleteSuccessMessage),
+   24 |         confirmDeleteButton: this.page.locator(elements_apiKey.confirmDeleteButton),
+   25 |         viewApiKeyTitle: this.page.locator(elements_apiKey.viewApiKeyTitle),
+   26 |         viewApiKeyProject: this.page.locator(elements_apiKey.viewApiKeyProject),
+   27 |         deleteButton: this.page.locator(elements_apiKey.deleteButton),
+   28 |         threeDotButton: this.page.locator(elements_apiKey.threeDotButton),
+   29 |     };
+   30 |
+   31 |     private selectedProjectName: string = '';
+   32 |
+   33 |     get projectName(): string {
+   34 |         return this.selectedProjectName;
+   35 |     }
+   36 |
+   37 |     constructor(page: Page) {
+   38 |         super(page);
+   39 |     }
+   40 |
+   41 |     async navigateToApiKey() {
+   42 |         console.log('Navigating to API Key page...');
+   43 |         await this.elements.apiKeyMenu.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   44 |         await this.elements.apiKeyMenu.click();
+   45 |         await this.elements.apiKeyTitle.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   46 |         console.log('Successfully navigated to API Key page');
+   47 |     }
+   48 |
+   49 |     async clickNewApiKey() {
+   50 |         console.log('Attempting to click New API Key button...');
+   51 |         await this.elements.newApiKeyButton.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   52 |         console.log('New API Key button is visible, attempting to click...');
+>  53 |         await this.elements.newApiKeyButton.click();
+      |                                             ^ TimeoutError: locator.click: Timeout 30000ms exceeded.
+   54 |         console.log('Successfully clicked New API Key button');
+   55 |         await this.elements.createApiKeyTitle.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   56 |         console.log('Create API Key form is visible');
+   57 |     }
+   58 |
+   59 |     async getAvailableProjectIndices(): Promise<number[]> {
+   60 |         console.log('Getting available project indices...');
+   61 |         await this.elements.projectInput.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   62 |         await this.elements.projectInput.click();
+   63 |         
+   64 |         // Tunggu dropdown muncul
+   65 |         await this.elements.projectRandomOption.first().waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   66 |         
+   67 |         // Dapatkan semua opsi yang tersedia
+   68 |         const options = await this.elements.projectRandomOption.all();
+   69 |         console.log(`Total project options available: ${options.length}`);
+   70 |         
+   71 |         // Gunakan index dari 0 sampai jumlah opsi yang tersedia
+   72 |         const availableIndices = Array.from({ length: options.length }, (_, i) => i);
+   73 |         return availableIndices;
+   74 |     }
+   75 |
+   76 |     async getRandomProjectIndex(): Promise<number> {
+   77 |         const availableIndices = await this.getAvailableProjectIndices();
+   78 |         if (availableIndices.length === 0) {
+   79 |             console.log('No available project indices found');
+   80 |             return 0;
+   81 |         }
+   82 |         // Pilih index secara random dari array availableIndices
+   83 |         const randomIndex = Math.floor(Math.random() * availableIndices.length);
+   84 |         console.log(`Selected random project index: ${randomIndex} from available indices: ${availableIndices.join(', ')}`);
+   85 |         return randomIndex;
+   86 |     }
+   87 |
+   88 |     async selectProject(index?: number) {
+   89 |         console.log(`Attempting to select project${index !== undefined ? ` with index ${index}` : ' randomly'}...`);
+   90 |         await this.elements.projectInput.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   91 |         await this.elements.projectInput.click();
+   92 |         console.log('Clicked project input field');
+   93 |
+   94 |         // Tunggu dropdown muncul
+   95 |         await this.elements.projectRandomOption.first().waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+   96 |         console.log('Project dropdown is visible');
+   97 |         
+   98 |         if (index === undefined) {
+   99 |             // Jika tidak ada index yang diberikan, dapatkan random index
+  100 |             index = await this.getRandomProjectIndex();
+  101 |         } else {
+  102 |             // Cek apakah index yang diminta valid
+  103 |             const availableIndices = await this.getAvailableProjectIndices();
+  104 |             if (!availableIndices.includes(index)) {
+  105 |                 console.log(`Project with index ${index} not found. Available indices: ${availableIndices.join(', ')}`);
+  106 |                 // Jika index tidak ditemukan, pilih random index
+  107 |                 index = await this.getRandomProjectIndex();
+  108 |             }
+  109 |         }
+  110 |         
+  111 |         // Pilih project dengan index yang valid
+  112 |         try {
+  113 |             const options = await this.elements.projectRandomOption.all();
+  114 |             if (index < options.length) {
+  115 |                 await options[index].click();
+  116 |                 console.log(`Selected project with index: ${index}`);
+  117 |             } else {
+  118 |                 console.log(`Index ${index} out of range, selecting first option`);
+  119 |                 await options[0].click();
+  120 |             }
+  121 |         } catch (error) {
+  122 |             console.log(`Failed to select project with index ${index}, trying first available option`);
+  123 |             // Jika gagal, coba pilih opsi pertama yang tersedia
+  124 |             const firstOption = this.elements.projectRandomOption.first();
+  125 |             await firstOption.click();
+  126 |             console.log('Selected first available project option');
+  127 |         }
+  128 |     }
+  129 |
+  130 |     async getSelectedProjectText(): Promise<string> {
+  131 |         console.log('Getting selected project text...');
+  132 |         await this.elements.projectDropdown.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  133 |         await this.page.waitForTimeout(1000);
+  134 |         this.selectedProjectName = (await this.elements.projectDropdown.textContent()) || '';
+  135 |         console.log(`Selected project: "${this.selectedProjectName}"`);
+  136 |         return this.selectedProjectName;
+  137 |     }
+  138 |
+  139 |     async verifyProjectInList(projectName: string) {
+  140 |         console.log(`Verifying project "${projectName}" appears in the list...`);
+  141 |         const projectRow = this.page.locator(elements_apiKey.projectRow(projectName));
+  142 |         console.log('Waiting for project row to be visible...');
+  143 |         await projectRow.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  144 |         console.log('Project row is visible in the list');
+  145 |         return projectRow;
+  146 |     }
+  147 |
+  148 |     async deleteApiKey(projectName: string) {
+  149 |         // Klik menu action untuk project yang dipilih
+  150 |         const actionMenu = this.page.locator(elements_apiKey.actionMenu(projectName));
+  151 |         await actionMenu.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  152 |         await actionMenu.click();
+  153 |
+```
