@@ -1,0 +1,6 @@
+Starting Mitra Login setup...
+Logging in as mitra...
+=== Start Testing Multiple Choice Field ===
+=== Filling Options ===
+Option 1: Option 1 Multiple Choice
+Option 2: Option 2 Multiple Choice

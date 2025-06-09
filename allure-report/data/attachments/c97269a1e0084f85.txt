@@ -1,0 +1,7 @@
+Starting Mitra Login setup...
+Logging in as mitra...
+=== Testing Minimum Options ===
+=== Filling Options ===
+Option 1: Option 1 Dropdown
+Option 2: Option 2 Dropdown
+Delete button should be disabled when only 2 options exist

@@ -1,0 +1,7 @@
+Starting Mitra Login setup...
+Logging in as mitra...
+=== Testing Option Character Limit ===
+=== Testing Valid Option (225 characters) ===
+Valid Option Length: 225
+=== Testing Invalid Option (226 characters) ===
+Invalid Option Length: 225

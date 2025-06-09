@@ -1,0 +1,11 @@
+Starting Mitra Login setup...
+Logging in as mitra...
+=== Start Testing Dropdown Field ===
+=== Filling Options ===
+Option 1: Option 1 Dropdown
+Option 2: Option 2 Dropdown
+=== Validation Results ===
+Expected Label: 
+Actual Label: 
+Is Label Valid: true
+========================
