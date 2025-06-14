@@ -1,8 +1,0 @@
-Starting Mitra Login setup...
-Logging in as mitra...
-=== Validation Results ===
-Expected Label: Valid Label
-Actual Label: Valid Label
-Is Label Valid: true
-Index Used: 2
-========================

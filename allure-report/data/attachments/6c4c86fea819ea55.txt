@@ -1,6 +1,0 @@
-Starting Mitra Login setup...
-Logging in as mitra...
-=== Testing File Size Selection ===
-Expected size: 10 MB
-Selected size: 10 MB
-Verified file size selection: 10 MB

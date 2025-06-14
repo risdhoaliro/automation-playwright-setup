@@ -1,0 +1,17 @@
+Setting up test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Successfully logged in as Mitra
+Navigated to CCTV Management page
+Add CCTV modal opened
+Connection details filled: { username: 'admin', ip: '192.168.76.136', rtspPort: '555' }
+Navigated to CCTV information page
+CCTV information filled: {
+  name: 'CCTV_runny_572',
+  channel: '8',
+  groupName: 'Group Load Testing 1',
+  nodeName: 'Load Testing 36',
+  brand: 'Hikvision'
+}
+Creation result: { success: true, message: 'Data Added Successfully!' }
+Test documentation completed

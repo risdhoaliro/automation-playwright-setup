@@ -1,0 +1,9 @@
+Setting up test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Successfully logged in as Mitra
+Navigated to Asset Management page
+Opened filter modal
+Applied filters: {"project":"Mitra Jaya Group","group":"Group Load Testing 1","node":"Solar Mast Monitoring System - Samarinda"}
+=== Filtered Results ===
+Cleared filters

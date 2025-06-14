@@ -1,9 +1,0 @@
-Starting Mitra Login setup...
-Logging in as mitra...
-=== Start Testing Field Movement ===
-Step 1: Adding first text answer field - Field 1
-Step 2: Adding second text answer field - Field 2
-Step 3: Testing Move Up functionality
-Step 4: Testing Move Down functionality
-Step 5: Taking screenshot for documentation
-=== Field Movement Test Completed ===

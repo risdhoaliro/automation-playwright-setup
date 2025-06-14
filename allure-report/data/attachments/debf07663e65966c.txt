@@ -1,0 +1,39 @@
+Setting up test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Successfully logged in as Mitra
+Navigated to Asset Management page
+Entered search query: Form Setting Automation Test
+=== Search Results ===
+Text Answer: QA Automation Form Setting and Asset Management
+Dropdown Answer: Option Dropdown QA 1
+Multiple Choice: Option Multiple Choice QA 1, Option Multiple Choice QA 2, Option Multiple Choice QA 3, Option Multiple Choice QA 4, Option Multiple Choice QA 5
+Attachments: [
+  'additional-info-node-20250613053031694.mp4',
+  'additional-info-node-20250613053039551.pdf',
+  'additional-info-node-20250613053050642.jpg'
+]
+Project: Mitra Jaya Group
+Group: Group Load Testing 1
+Node: Form Setting Automation Test
+Coordinate: -2.5489, 120.0149
+------------------------
+
+=== Total Rows Found: 1 ===
+
+Row 1:
+{
+  "textAnswer": "QA Automation Form Setting and Asset Management",
+  "dropdownAnswer": "Option Dropdown QA 1",
+  "multipleChoiceAnswer": "Option Multiple Choice QA 1, Option Multiple Choice QA 2, Option Multiple Choice QA 3, Option Multiple Choice QA 4, Option Multiple Choice QA 5",
+  "attachments": [
+    "additional-info-node-20250613053031694.mp4",
+    "additional-info-node-20250613053039551.pdf",
+    "additional-info-node-20250613053050642.jpg"
+  ],
+  "projectName": "Mitra Jaya Group",
+  "groupName": "Group Load Testing 1",
+  "nodeName": "Form Setting Automation Test",
+  "coordinate": "-2.5489, 120.0149"
+}
+------------------------
