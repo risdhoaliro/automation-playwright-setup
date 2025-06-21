@@ -1,0 +1,12 @@
+Setting up Mitra test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Successfully logged in as Mitra
+Navigated to RBAC page
+Add New Role modal opened
+Role details filled: {
+  roleName: '',
+  description: '',
+  permissions: { dashboardMonitoring: true }
+}
+Mitra permissions configured

@@ -1,0 +1,23 @@
+Setting up Mitra test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Successfully logged in as Mitra
+Navigated to RBAC page
+Add New Role modal opened
+Role details filled: {
+  roleName: 'mitraDynamic Accounts Facilitator',
+  description: 'Profit-focused motivating hierarchy',
+  permissions: {
+    projectManagement: false,
+    userManagement: false,
+    rolePermission: true,
+    log: true,
+    setting: false,
+    ticketing: true,
+    cctvMonitoring: false,
+    cctvManagement: true,
+    reportManagement: true,
+    dashboardMonitoring: true
+  }
+}
+Mitra permissions configured

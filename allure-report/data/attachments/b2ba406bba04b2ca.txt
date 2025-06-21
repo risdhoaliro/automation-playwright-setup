@@ -1,0 +1,23 @@
+Setting up Admin test environment...
+Starting Admin Login setup...
+Logging in as admin...
+Successfully logged in as Admin
+Navigated to RBAC page
+Add New Role modal opened
+Role details filled: {
+  roleName: 'adminDistrict Communications Designer',
+  description: 'Robust encompassing neural-net',
+  permissions: {
+    secretKey: false,
+    projectManagement: false,
+    userManagement: false,
+    rolePermission: true,
+    log: true,
+    setting: false,
+    ticketing: true,
+    field: false,
+    categoryManagement: false,
+    unitManagement: false
+  }
+}
+Permissions configured

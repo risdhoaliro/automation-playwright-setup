@@ -1,0 +1,23 @@
+Setting up Admin test environment...
+Starting Admin Login setup...
+Logging in as admin...
+Successfully logged in as Admin
+Navigated to RBAC page
+Add New Role modal opened
+Role details filled: {
+  roleName: 'adminLegacy Accountability Director',
+  description: 'Reduced zero defect functionalities',
+  permissions: {
+    secretKey: false,
+    projectManagement: false,
+    userManagement: true,
+    rolePermission: true,
+    log: true,
+    setting: true,
+    ticketing: true,
+    field: true,
+    categoryManagement: true,
+    unitManagement: false
+  }
+}
+Permissions configured
