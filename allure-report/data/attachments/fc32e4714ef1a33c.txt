@@ -1,0 +1,24 @@
+Setting up Client test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Successfully logged in as Client
+Navigated to Dashboard page
+Filtered project
+Clicked on Customize Summary
+Add Section button is disabled
+Clicked Add New Chart button in section 1
+Clicked Add New Chart button in section 1
+Created chart with name: Test Automation Chart Three 1750825862484
+Selected category: Power
+Selected group: All Group
+Node dropdown is disabled, skipping node selection
+Selected node: All Node
+Device QA Automation Delapan status: Active
+Selected device: QA Automation Delapan
+Device QA Automation Sembilan status: Active
+Selected device: QA Automation Sembilan
+Successfully clicked Choose Parameter button
+Selected devices: QA Automation Delapan, QA Automation Sembilan
+Selected all parameter outputs
+Selected all parameter outputs
+Successfully verified chart "Test Automation Chart Three 1750825862484" is visible
