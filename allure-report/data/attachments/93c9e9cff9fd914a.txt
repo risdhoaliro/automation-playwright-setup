@@ -1,0 +1,35 @@
+Starting Mitra Login setup...
+Logging in as mitra...
+Success popup found, closing it...
+--- Start Edit Customer Test Case ---
+Searching with original name: CustomerIda Sipes
+Clicking action menu for username: CustomerLurlineJacobs
+Starting edit form process...
+Edit form data: {
+  name: 'EditCustomerJessica Cummi',
+  email: 'EditCustomer_automationqa17515976766638283@nearon.io',
+  role: 'Automation Mitra For Edit',
+  project: 'QA Khusus Automation Mitra'
+}
+Starting fillEditAccountFormMitra with data: {
+  name: 'EditCustomerJessica Cummi',
+  email: 'EditCustomer_automationqa17515976766638283@nearon.io',
+  role: 'Automation Mitra For Edit',
+  project: 'QA Khusus Automation Mitra'
+}
+Filling name: EditCustomerJessica Cummi
+Filling email: EditCustomer_automationqa17515976766638283@nearon.io
+Attempting to fill role: Automation Mitra For Edit
+Role dropdown is visible
+Role dropdown clicked and cleared
+Role input filled with: Automation Mitra For Edit
+Enter pressed on role input
+Note: Project selection is not available in edit form, only in create form
+Clicking next button
+Finished fillEditAccountFormMitra
+Starting edit contact form...
+Contact form data: { whatsappNumber: '087805839949', telegramUsername: '@Tamia.Lang' }
+Saving edit form...
+Stored edited customer fullName: EditCustomerJessica Cummi
+Verifying success message: Data Updated Successfully!
+--- End Edit Customer Test Case ---

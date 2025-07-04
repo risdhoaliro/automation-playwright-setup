@@ -1,0 +1,39 @@
+Starting Admin Login setup...
+Logging in as admin...
+Success popup found, closing it...
+--- Start Test: Add Administrator: Valid input ---
+Verifying Users Management Page...
+Selecting Administrator tab...
+Storing created user data: {
+  fullName: 'AdminJosh Nicolas',
+  username: 'AdminNorbertoJacobi',
+  email: 'Admin_automationqa17515966759581414@nearon.io'
+}
+Opening Add User modal...
+Filling administrator form with data: {
+  "name": "AdminJosh Nicolas",
+  "username": "AdminNorbertoJacobi",
+  "email": "Admin_automationqa17515966759581414@nearon.io",
+  "password": "password01",
+  "accountStatus": "Active",
+  "project": "QA Khusus Automation Mitra",
+  "confirmPassword": "password01",
+  "whatsappNumber": "087811110522",
+  "telegramUsername": "@Lacey68",
+  "role": "Administrator"
+}
+Filling contact form: {
+  name: 'AdminJosh Nicolas',
+  username: 'AdminNorbertoJacobi',
+  email: 'Admin_automationqa17515966759581414@nearon.io',
+  password: 'password01',
+  accountStatus: 'Active',
+  project: 'QA Khusus Automation Mitra',
+  confirmPassword: 'password01',
+  whatsappNumber: '087811110522',
+  telegramUsername: '@Lacey68',
+  role: 'Administrator'
+}
+Saving form...
+Verifying success message: Data added successfully
+--- End Test: Add Administrator: Valid input ---

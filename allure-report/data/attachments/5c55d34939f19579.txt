@@ -1,0 +1,17 @@
+Starting Admin Login setup...
+Logging in as admin...
+Success popup found, closing it...
+--- Start Edit Administrator Test Case ---
+Current test case: Edit Administrator: Positive
+Searching with original name: AdminSophie Collins
+Clicking action menu for username: AdminStacy28
+Starting edit form process...
+Edit form data: {
+  name: 'EditAdminKayla Bechtelar',
+  email: 'EditAdmin_automationqa17515974917745604@nearon.io',
+  role: 'Role User Automation Edit'
+}
+Saving edit form...
+Stored edited admin fullName: EditAdminKayla Bechtelar
+Verifying success message: Data Updated Successfully!
+--- End Edit Administrator Test Case ---
