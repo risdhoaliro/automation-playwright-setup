@@ -1,0 +1,13 @@
+Setting up Admin test environment...
+Starting Admin Login setup...
+Logging in as admin...
+Success popup found, closing it...
+Successfully logged in as Admin
+Navigated to RBAC page
+Navigated to RBAC page
+Checked user checkbox at index 2
+Selected user for role change
+Waiting for bulk change role button to appear
+Bulk Change Role button enabled: true
+Bulk Change Role button clicked
+Role dropdown appeared successfully
