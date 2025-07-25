@@ -1,0 +1,19 @@
+Setting up Admin test environment...
+Starting Admin Login setup...
+Logging in as admin...
+Success popup found, closing it...
+Successfully logged in as Admin
+Navigated to Unit Management page
+Navigated to Unit Management page
+Clicked Add New Unit button
+Opened Add New Unit modal
+Filled name: Dinema Unit
+Filled description: Unit for measuring dinema values in the system
+Filled unit form with data: {
+  name: 'Dinema Unit',
+  description: 'Unit for measuring dinema values in the system'
+}
+Clicked Add button
+Submitted form
+Success message: Data Added Successfully!
+Verified success message: Data Added Successfully!

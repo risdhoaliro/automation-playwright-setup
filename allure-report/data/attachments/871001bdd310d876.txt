@@ -1,0 +1,16 @@
+Setting up Admin test environment...
+Starting Admin Login setup...
+Logging in as admin...
+Success popup found, closing it...
+Successfully logged in as Admin
+Navigated to Unit Management page
+Navigated to Unit Management page
+Clicked Add New Unit button
+Opened Add New Unit modal
+Skipping form fill for empty field validation
+Clicked Add button
+Submitted form
+Validation errors: { name: true, description: true }
+Validation errors found: { name: true, description: true }
+Name required validation error verified
+Description required validation error verified

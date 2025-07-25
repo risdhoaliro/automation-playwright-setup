@@ -1,0 +1,24 @@
+Setting up Admin test environment...
+Starting Admin Login setup...
+Logging in as admin...
+Success popup found, closing it...
+Successfully logged in as Admin
+Navigated to Unit Management page
+Navigated to Unit Management page
+Clicked Add New Unit button
+Opened Add New Unit modal
+Filled name: QA Unit 569
+Filled description: QA Test Unit for automation testing - 1753366038831
+Filled unit form with data: {
+  name: 'QA Unit 569',
+  description: 'QA Test Unit for automation testing - 1753366038831'
+}
+Clicked Add button
+Submitted form
+Success message: Data Added Successfully!
+Verified success message: Data Added Successfully!
+Filled search input with: QA Unit 569
+Clicked search button for: QA Unit 569
+Searched for unit: QA Unit 569
+Unit found: QA Unit 569
+Verified unit exists in search results: QA Unit 569
