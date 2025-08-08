@@ -1,0 +1,214 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: API Key Tests >> Admin Profile Test > Create new API Key with available project with Delete API Key
+- Location: /Applications/automation-nearon-playwright/Tests/apiKey.test.ts:14:9
+
+# Error details
+
+```
+TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('xpath=(//span[@class=\'ant-btn-icon\']/following-sibling::span)[2]') to be visible
+    11 × locator resolved to hidden <span class="ant-typography text-red-500 css-1y82enc">Delete</span>
+
+    at ApiKeyPage.deleteRandomApiKeyWithThreeDot (/Applications/automation-nearon-playwright/Pages/apiKey/key_api_key.ts:315:32)
+    at /Applications/automation-nearon-playwright/Tests/apiKey.test.ts:27:13
+    at /Applications/automation-nearon-playwright/Tests/apiKey.test.ts:25:9
+```
+
+# Page snapshot
+
+```yaml
+- button "Menu":
+  - img "Menu"
+- link "Nearon":
+  - img "Nearon"
+- separator
+- text: Theme
+- switch "moon sun":
+  - img "moon"
+  - img "sun"
+- button
+- separator
+- link "avatar Amya Administrator":
+  - img "avatar"
+  - text: Amya Administrator
+- button "Org Settings":
+  - img "Org Settings"
+- button "Privacy & Security":
+  - img "Privacy & Security"
+- button "Sensor Management":
+  - img "Sensor Management"
+- button "Device Management":
+  - img "Device Management"
+- button "poweroff":
+  - img "poweroff"
+- main:
+  - navigation:
+    - list:
+      - listitem:
+        - link "Dashboard"
+      - listitem:
+        - link "Privacy & Security"
+      - listitem:
+        - link "API Key"
+  - heading "API Key" [level=3]
+  - text: Displaying 1 of 1 API key
+  - button "New API Key"
+  - table:
+    - rowgroup:
+      - row "Nomor Project Name API Key Action":
+        - columnheader "Nomor"
+        - columnheader "Project Name"
+        - columnheader "API Key"
+        - columnheader "Action"
+    - rowgroup:
+      - row "1 Gempur Project B3WzGhBt29rDEgic":
+        - cell "1"
+        - cell "Gempur Project"
+        - cell "B3WzGhBt29rDEgic":
+          - text: B3WzGhBt29rDEgic
+          - button
+        - cell:
+          - button
+  - list:
+    - listitem "Previous Page":
+      - button "left" [disabled]:
+        - img "left"
+    - listitem "1"
+    - listitem "Next Page":
+      - button "right" [disabled]:
+        - img "right"
+- alert: Nearon Admin
+```
+
+# Test source
+
+```ts
+  215 |                     
+  216 |                     // Verifikasi view API key modal
+  217 |                     await this.verifyViewApiKeyModal(this.projectName);
+  218 |                     console.log('View API Key modal verified successfully');
+  219 |                     
+  220 |                     // Verifikasi copy API key button
+  221 |                     await this.elements.copyAPIKEY.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  222 |                     console.log('Copy API Key button is visible');
+  223 |
+  224 |                     await this.closeViewApiKeyModal();
+  225 |                 }
+  226 |             } catch (error) {
+  227 |                 // Jika tidak ada pesan error, API key berhasil dibuat
+  228 |                 isApiKeyCreated = true;
+  229 |                 console.log('No existing API Key found, continuing with creation...');
+  230 |             }
+  231 |         }
+  232 |
+  233 |         if (!isApiKeyCreated) {
+  234 |             console.log(`Failed to create API Key after ${maxAttempts} attempts.`);
+  235 |         }
+  236 |     }
+  237 |
+  238 |     async createApiKeyWithoutProject() {
+  239 |         await this.clickNewApiKey();
+  240 |         await this.elements.createAndViewButton.click();
+  241 |     }
+  242 |
+  243 |     async cancelCreateApiKey() {
+  244 |         await this.elements.cancelButton.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  245 |         await this.elements.cancelButton.click();
+  246 |     }
+  247 |
+  248 |     async copyApiKey() {
+  249 |         await this.elements.copyAPIKEY.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  250 |         const apiKeyValue = await this.elements.copyAPIKEY.inputValue();
+  251 |         console.log(`API Key value: ${apiKeyValue}`);
+  252 |         return apiKeyValue;
+  253 |     }
+  254 |
+  255 |     async verifySuccessMessage() {
+  256 |         await this.elements.successMessage.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  257 |         return this.elements.successMessage;
+  258 |     }
+  259 |
+  260 |     async verifyErrorMessage() {
+  261 |         await this.elements.errorMessage.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  262 |         return this.elements.errorMessage;
+  263 |     }
+  264 |
+  265 |     async verifyProjectRequiredMessage() {
+  266 |         console.log('Memverifikasi pesan project required...');
+  267 |         await this.elements.projectRequiredMessage.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  268 |         const messageText = await this.elements.projectRequiredMessage.textContent();
+  269 |         console.log(`Pesan project required: "${messageText}"`);
+  270 |         return this.elements.projectRequiredMessage;
+  271 |     }
+  272 |
+  273 |     async verifyViewApiKeyModal(expectedProject: string) {
+  274 |         console.log('Verifying View API Key modal...');
+  275 |         await this.elements.viewApiKeyTitle.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  276 |         
+  277 |         // Verify project name
+  278 |         const projectName = await this.elements.viewApiKeyProject.textContent();
+  279 |         console.log(`Project name in modal: ${projectName}`);
+  280 |         if (projectName !== expectedProject) {
+  281 |             throw new Error(`Expected project name "${expectedProject}" but found "${projectName}"`);
+  282 |         }
+  283 |     }
+  284 |
+  285 |     async closeViewApiKeyModal() {
+  286 |         console.log('Closing View API Key modal...');
+  287 |         await this.elements.closeButton.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  288 |         await this.elements.closeButton.click();
+  289 |     }
+  290 |
+  291 |     async deleteRandomApiKeyWithThreeDot() {
+  292 |         console.log('Mencari tombol tiga titik untuk menghapus API Key...');
+  293 |         const threeDotButton = this.page.locator(elements_apiKey.threeDotButton);
+  294 |         await threeDotButton.first().waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  295 |         const isVisible = await threeDotButton.first().isVisible();
+  296 |
+  297 |         if (!isVisible) {
+  298 |             console.log('Data API Key tidak ada.');
+  299 |             return;
+  300 |         }
+  301 |
+  302 |         console.log('Delete Data Api Key');
+  303 |         await threeDotButton.first().click();
+  304 |
+  305 |         let successVisible = false;
+  306 |         let attempts = 0;
+  307 |         const maxAttempts = 5;
+  308 |
+  309 |         while (!successVisible && attempts < maxAttempts) {
+  310 |             attempts++;
+  311 |             console.log(`Menunggu pesan sukses, percobaan ke-${attempts}...`);
+  312 |
+  313 |             // Klik delete button action 
+  314 |             const deleteButton = this.page.locator(elements_apiKey.deleteButton);
+> 315 |             await deleteButton.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+      |                                ^ TimeoutError: locator.waitFor: Timeout 10000ms exceeded.
+  316 |             await deleteButton.click();
+  317 |
+  318 |             // Klik delete button di popup
+  319 |             const deleteButtonAtPopup = this.page.locator(elements_apiKey.deleteButtonAtPopup);
+  320 |             await deleteButtonAtPopup.waitFor({ state: 'visible', timeout: waitTime.MEDIUM });
+  321 |             await deleteButtonAtPopup.click();
+  322 |
+  323 |             successVisible = await this.elements.deleteSuccessMessage.isVisible({ timeout: waitTime.MEDIUM });
+  324 |         }
+  325 |
+  326 |         if (successVisible) {
+  327 |             console.log('API Key berhasil dihapus!');
+  328 |         } else {
+  329 |             console.log('Gagal menghapus API Key setelah beberapa percobaan.');
+  330 |         }
+  331 |     }
+  332 | }
+  333 |
+```
