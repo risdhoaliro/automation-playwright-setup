@@ -33,6 +33,3 @@ yarn-error.log*
 # Temporary files
 *.tmp
 *.temp
-
-# Allure reports
-# /allure-results/
