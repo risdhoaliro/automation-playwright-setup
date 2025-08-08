@@ -1,0 +1,48 @@
+Setting up test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Success popup found, closing it...
+Successfully logged in as Mitra
+Starting navigation to Ticketing Report...
+Navigated to Report menu
+Clicked on Report menu
+Navigated to Ticketing Report
+Navigated to Ticketing Report successfully
+Navigated to Ticket Report page
+Add New Ticket button clicked
+Add New Ticket modal opened
+Saved ticket title for search: Normal Connection Problem
+Title filled: Normal Connection Problem
+Priority selected: High
+Project selected: PT QA Automation Tiga
+Group selected: QA 1
+Node selected: QA Node Tiga
+Device Type selected: Actuator
+Device Name selected: QA Automation Actuator Satu
+Due Date & Time filled: 09/08/2025 00:00:00
+Ticket information filled: {
+  title: 'Normal Connection Problem',
+  priority: 'High',
+  project: 'PT QA Automation Tiga',
+  group: 'QA 1',
+  node: 'QA Node Tiga',
+  deviceType: 'Actuator',
+  deviceName: 'QA Automation Actuator Satu',
+  dueDateTime: '09/08/2025 00:00:00',
+  evidenceMessage: 'Evidence for Urgent Network Issue - Created on 2025-08-08T07:51:02.163Z'
+}
+Next button clicked (attempt 1)
+Evidence message field not found, retrying... (4 attempts left)
+Next button clicked (attempt 2)
+Evidence message field found successfully
+Navigated to Evidence page
+Message filled: Evidence for Urgent Network Issue - Created on 2025-08-08T07:51:02.163Z
+Evidence file uploaded: Fixtures/testprofile.jpg
+Evidence form filled: {
+  message: 'Evidence for Urgent Network Issue - Created on 2025-08-08T07:51:02.163Z',
+  file: 'Fixtures/testprofile.jpg'
+}
+Save Evidence button clicked
+Evidence saved
+Creation result: { success: true, message: 'Data Added Successfully!' }
+Test documentation completed

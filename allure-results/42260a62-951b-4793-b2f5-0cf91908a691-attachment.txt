@@ -1,0 +1,43 @@
+Setting up test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Success popup found, closing it...
+Successfully logged in as Mitra
+Starting navigation to Ticketing Report...
+Navigated to Report menu
+Clicked on Report menu
+Navigated to Ticketing Report
+Navigated to Ticketing Report successfully
+Navigated to Ticket Report page
+Add New Ticket button clicked
+Add New Ticket modal opened
+Skipping form fill to test validation
+Next button clicked without retry logic
+Next button clicked without filling required fields
+✓ Validation error verified: Title is required
+✓ Validation error verified: Priority is required
+✓ Validation error verified: Project is required
+✓ Validation error verified: Group is required
+✓ Validation error verified: Node is required
+✓ Validation error verified: Device Type is required
+✓ Validation error verified: Device is required
+✓ Validation error verified: Due Date is required
+Validation error found: Title is required
+Validation error found: Priority is required
+Validation error found: Project is required
+Validation error found: Group is required
+Validation error found: Node is required
+Validation error found: Device Type is required
+Validation error found: Device is required
+Validation error found: Due Date is required
+All validation errors found: [
+  'Title is required',
+  'Priority is required',
+  'Project is required',
+  'Group is required',
+  'Node is required',
+  'Device Type is required',
+  'Device is required',
+  'Due Date is required'
+]
+Validation test documentation completed

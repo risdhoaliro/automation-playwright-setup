@@ -1,0 +1,46 @@
+Setting up test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Success popup found, closing it...
+Successfully logged in as Mitra
+Starting navigation to Ticketing Report...
+Navigated to Report menu
+Clicked on Report menu
+Navigated to Ticketing Report
+Navigated to Ticketing Report successfully
+Navigated to Ticket Report page
+Add New Ticket button clicked
+Add New Ticket modal opened
+Title filled: Critical Data Corruption
+Priority selected: High
+Project selected: PT QA Automation Tiga
+Group selected: QA 1
+Node selected: QA Node Tiga
+Device Type selected: Actuator
+Device Name selected: QA Automation Actuator Satu
+Due Date & Time filled: 09/08/2025 00:00:00
+Ticket information filled as precondition: {
+  title: 'Critical Data Corruption',
+  priority: 'High',
+  project: 'PT QA Automation Tiga',
+  group: 'QA 1',
+  node: 'QA Node Tiga',
+  deviceType: 'Actuator',
+  deviceName: 'QA Automation Actuator Satu',
+  dueDateTime: '09/08/2025 00:00:00',
+  evidenceMessage: 'Evidence for Low Security Issue - Created on 2025-08-08T07:52:17.300Z'
+}
+Next button clicked (attempt 1)
+Evidence message field not found, retrying... (4 attempts left)
+Next button clicked (attempt 2)
+Evidence message field found successfully
+Navigated to Evidence page
+Skipping evidence form fill to test validation
+Save Evidence button clicked
+Save button clicked without filling required evidence fields
+✓ Evidence validation error verified: Message is required
+✓ Evidence validation error verified: Attachment is required
+Evidence validation error found: Message is required
+Evidence validation error found: Attachment is required
+All evidence validation errors found: [ 'Message is required', 'Attachment is required' ]
+Evidence validation test documentation completed

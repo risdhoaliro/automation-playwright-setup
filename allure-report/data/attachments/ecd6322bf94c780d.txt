@@ -1,0 +1,51 @@
+Setting up restore test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Success popup found, closing it...
+Successfully logged in as Mitra
+Starting navigation to Ticketing Report...
+Navigated to Report menu
+Clicked on Report menu
+Navigated to Ticketing Report
+Navigated to Ticketing Report successfully
+Navigated to Ticket Report page for restore test
+Add New Ticket button clicked
+Add New Ticket modal opened
+Generated ticket title for restore test: Urgent Device Malfunction
+Title filled: Urgent Device Malfunction
+Priority selected: High
+Project selected: PT QA Automation Tiga
+Group selected: QA 1
+Node selected: QA Node Tiga
+Device Type selected: Actuator
+Device Name selected: QA Automation Actuator Satu
+Due Date & Time filled: 09/08/2025 00:00:00
+Next button clicked (attempt 1)
+Evidence message field not found, retrying... (4 attempts left)
+Next button clicked (attempt 2)
+Evidence message field found successfully
+Message filled: Evidence for Normal Power Failure - Created on 2025-08-08T07:55:40.121Z
+Evidence file uploaded: Fixtures/testprofile.jpg
+Save Evidence button clicked
+Ticket created successfully for restore test
+Search title filled: Urgent Device Malfunction
+Search button clicked
+Searched for ticket to archive: Urgent Device Malfunction
+Dot three button clicked
+Archive button clicked
+Force Close & Archive button clicked
+Ticket archived successfully
+Archive success message verified
+✓ Archive success message verified
+Archive tab clicked
+Navigated to Archive tab
+Search title filled: Urgent Device Malfunction
+Search button clicked
+Search performed for restore with title: Urgent Device Malfunction
+Dot three button clicked
+Restore button clicked
+Restore confirmation button clicked
+Restore ticket process completed
+Restore success message verified
+✓ Restore success message verified
+Restore test documentation completed

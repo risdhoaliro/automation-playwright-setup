@@ -1,3 +1,0 @@
-Starting Profile Test Suite
-Starting Mitra Password Management Tests setup...
-Mitra Password Management Tests setup completed
