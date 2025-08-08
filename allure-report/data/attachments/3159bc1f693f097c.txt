@@ -1,0 +1,13 @@
+Starting Mitra Login setup...
+Logging in as mitra...
+Success popup found, closing it...
+Navigated to CCTV detail page
+CCTV Connection updated: {
+  ip: '111.010.10.0',
+  rtspPort: '808',
+  username: 'qaautomationcctvsatu',
+  machineId: 'Machine Nearon CCTV Automation',
+  channel: 'fvsfs'
+}
+Success message verified
+Test documentation completed
