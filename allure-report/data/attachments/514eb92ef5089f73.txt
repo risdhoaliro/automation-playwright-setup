@@ -1,0 +1,16 @@
+Starting Mitra Login setup...
+Logging in as mitra...
+Success popup found, closing it...
+Add CCTV modal opened
+Connection details filled: {
+  ip: '192.168.1.1',
+  rtspPort: '554',
+  username: 'admin',
+  machineId: 'Machine Nearon CCTV Automation',
+  channel: '1'
+}
+Navigated to CCTV information page
+CCTV Name validation error is visible
+Brand validation error is visible
+Type validation error is visible
+Test documentation completed
