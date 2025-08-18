@@ -1,0 +1,42 @@
+Setting up test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Success popup found, closing it...
+Successfully logged in as Client Sensor
+Sensor Management page initialized
+Generated new additional information: QA Additional Info Edit 876753 - Updated
+Navigating to Sensor Management...
+Navigated to Sensor Management
+Navigated to Sensor Management page
+Searching for sensor project: QA Automation Node
+Search executed and waiting for results
+Searched for: QA Automation Node
+Expanding sensor details for group...
+Page load state: networkidle
+Search input is visible
+Clicked dropdown arrow
+Clicked first caret right
+Waiting after first caret click
+Expanded sensor details
+Clicking node name cell: QA Main Bridge Base 486891
+Node name cell clicked
+Clicked on node name: QA Main Bridge Base 486891
+Clicking Edit Additional Information button...
+Trying to click Edit Additional Information button using nth(2) edit button for additional info...
+nth(2) edit button for additional info failed: locator.waitFor: Timeout 3000ms exceeded.
+Call log:
+  - waiting for locator('//button[contains(@class,\'ant-btn css-49u4vm ant-btn-text ant-btn-color-default ant-btn-variant-text\')]//span[normalize-space(text())=\'Edit\']').nth(2) to be visible
+
+Trying to click Edit Additional Information button using nth(2) edit span for additional info...
+Edit Additional Information button clicked using nth(2) edit span for additional info
+Clicked Edit Additional Information button
+Editing additional information: QA Additional Info Edit 876753 - Updated
+Additional information edited
+Edited additional information to: QA Additional Info Edit 876753 - Updated
+Clicking Save Changes button for node...
+Save Changes button clicked for node
+Clicked Save Changes button
+Verifying node additional information update success message...
+Node additional information update success message verified: true
+Node additional information updated successfully
+Test documentation completed

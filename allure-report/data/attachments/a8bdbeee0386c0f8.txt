@@ -1,0 +1,68 @@
+Setting up test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Success popup found, closing it...
+Successfully logged in as Client Sensor
+Sensor Management page initialized
+Generated node data: {
+  nodeName: 'QA Central Router Zone 847637',
+  description: 'Automated node for system status monitoring in QA testing environment - Organized dedicated monitoring',
+  tolerance: '10',
+  locationName: 'QA Building 435637',
+  additionalInfo: 'Quality assurance validation - 767637'
+}
+Navigating to Sensor Management...
+Navigated to Sensor Management
+Navigated to Sensor Management page
+Searching for sensor project: QA Automation Node
+Search executed and waiting for results
+Searched for: QA Automation Node
+Expanding sensor details for group...
+Page load state: networkidle
+Search input is visible
+Clicked dropdown arrow
+Clicked first caret right
+Waiting after first caret click
+Expanded sensor details
+Clicking Add Node button...
+Add Node button clicked
+Clicked Add Node button
+Filling node name: QA Central Router Zone 847637
+Node name filled
+Filled node name: QA Central Router Zone 847637
+Filling node description: Automated node for system status monitoring in QA testing environment - Organized dedicated monitoring
+Node description filled
+Filled node description
+Selecting node type...
+Node type dropdown clicked
+Node type selected
+Selected node type
+Filling tolerance second: 10
+Tolerance second filled
+Filled tolerance second: 10
+Clicking Next button...
+Next button clicked
+Clicked Next button to go to Location step
+Filling location name: QA Building 435637
+Location name filled
+Filled location name: QA Building 435637
+Clicking Add Pin Point button...
+Add Pin Point button clicked
+Clicked Add Pin Point button
+Clicking Select Pin Point button...
+Select Pin Point button clicked
+Clicked Select Pin Point button
+Clicking Next button...
+Next button clicked
+Clicked Next button to go to Additional Information step
+Filling additional information: Quality assurance validation - 767637
+Additional information filled
+Filled additional information: Quality assurance validation - 767637
+Clicking final Add button...
+Final Add button clicked
+Clicked final Add button
+Verifying node creation success...
+Node success message visibility: true
+Node created successfully
+Stored node name for future use: QA Central Router Zone 847637
+Test documentation completed

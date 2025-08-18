@@ -1,0 +1,47 @@
+Setting up test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Success popup found, closing it...
+Successfully logged in as Client Sensor
+Sensor Management page initialized
+Generated new location name: QA Location Edit 843177
+Navigating to Sensor Management...
+Navigated to Sensor Management
+Navigated to Sensor Management page
+Searching for sensor project: QA Automation Node
+Search executed and waiting for results
+Searched for: QA Automation Node
+Expanding sensor details for group...
+Page load state: networkidle
+Search input is visible
+Clicked dropdown arrow
+Clicked first caret right
+Waiting after first caret click
+Expanded sensor details
+Clicking node name cell: QA Main Bridge Base 486891
+Node name cell clicked
+Clicked on node name: QA Main Bridge Base 486891
+Clicking Edit Node Location button...
+Trying to click Edit Node Location button using full class edit button...
+full class edit button failed: locator.waitFor: Timeout 3000ms exceeded.
+Call log:
+  - waiting for locator('//button[contains(@class,\'ant-btn css-49u4vm ant-btn-text ant-btn-color-default ant-btn-variant-text\')]//span[normalize-space(text())=\'Edit\']') to be visible
+
+Trying to click Edit Node Location button using nth(1) edit button...
+nth(1) edit button failed: locator.waitFor: Timeout 3000ms exceeded.
+Call log:
+  - waiting for locator('//button[contains(@class,\'ant-btn css-49u4vm\')]//span[normalize-space(text())=\'Edit\']').nth(1) to be visible
+
+Trying to click Edit Node Location button using nth(1) edit span...
+Edit Node Location button clicked using nth(1) edit span
+Clicked Edit Node Location button
+Editing location name: QA Location Edit 843177
+Location name edited
+Edited location name to: QA Location Edit 843177
+Clicking Save Changes button for node...
+Save Changes button clicked for node
+Clicked Save Changes button
+Verifying node location update success message...
+Node location update success message verified: true
+Node location updated successfully
+Test documentation completed

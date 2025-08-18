@@ -1,0 +1,41 @@
+Setting up test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Success popup found, closing it...
+Successfully logged in as Client Sensor
+Sensor Management page initialized
+Navigating to Sensor Management...
+Navigated to Sensor Management
+Navigated to Sensor Management page
+Searching for sensor project: QA Automation Node
+Search executed and waiting for results
+Searched for: QA Automation Node
+Expanding sensor details for group...
+Page load state: networkidle
+Search input is visible
+Clicked dropdown arrow
+Clicked first caret right
+Waiting after first caret click
+Expanded sensor details
+Clicking node name cell: QA Main Bridge Base 486891
+Node name cell clicked
+Clicked on node name: QA Main Bridge Base 486891
+Clicking Dot Three (Options) button...
+Trying to click Dot Three button using full class dot three button...
+full class dot three button failed: locator.waitFor: Timeout 3000ms exceeded.
+Call log:
+  - waiting for locator('//button[contains(@class,\'ant-btn css-49u4vm ant-btn-text ant-btn-color-default ant-btn-variant-text ant-btn-icon-only ant-dropdown-trigger\')]') to be visible
+
+Trying to click Dot Three button using dropdown trigger with icon only...
+Dot Three button clicked using dropdown trigger with icon only
+Clicked Dot Three button
+Clicking Delete menu button...
+Delete menu button clicked
+Clicked Delete menu button
+Clicking Delete confirmation button...
+Delete confirmation button clicked
+Clicked Delete confirmation button
+Verifying node delete success message...
+Node delete success message verified: true
+Node deleted successfully
+Test documentation completed
