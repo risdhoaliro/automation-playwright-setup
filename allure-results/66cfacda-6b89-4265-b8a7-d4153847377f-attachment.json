@@ -1,7 +1,0 @@
-{
-  "customId": "TEST833625",
-  "sensorName": "QA Pressure Gauge Indoor 3626",
-  "description": "Automated sensor for monitoring environmental conditions in QA testing environment. Openarchitected global installation",
-  "minValue": "27",
-  "maxValue": "59"
-}
