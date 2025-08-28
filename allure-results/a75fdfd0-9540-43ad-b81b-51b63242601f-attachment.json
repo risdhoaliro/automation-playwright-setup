@@ -1,8 +1,0 @@
-{
-  "errors": [
-    "CCTV brand is required.",
-    "Model name is required.",
-    "Model code is required.",
-    "Type is required."
-  ]
-}
