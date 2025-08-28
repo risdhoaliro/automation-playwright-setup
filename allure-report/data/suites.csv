@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","21580","[Sensor Category] Should be able to search for created sensor category","Nearon In Chrome","Thu Aug 28 10:41:54 WIB 2025","passed","Thu Aug 28 10:42:15 WIB 2025","[Device Catalog Feature] Create Sensor Category Tests","","",""
+"","12513","[Sensor Category] Should show validation errors for empty required fields","Nearon In Chrome","Thu Aug 28 10:42:15 WIB 2025","passed","Thu Aug 28 10:42:28 WIB 2025","[Device Catalog Feature] Create Sensor Category Tests","","",""
+"","37732","[Sensor Category] Should be able to create new Sensor Category with complete information","Nearon In Chrome","Thu Aug 28 10:41:13 WIB 2025","passed","Thu Aug 28 10:41:51 WIB 2025","[Device Catalog Feature] Create Sensor Category Tests","","",""
+"","22323","[Sensor Category] Should be able to delete sensor category","Nearon In Chrome","Thu Aug 28 10:43:02 WIB 2025","passed","Thu Aug 28 10:43:25 WIB 2025","[Device Catalog Feature] Delete Sensor Category Tests","","",""
+"","34646","[Sensor Category] Should be able to edit sensor category","Nearon In Chrome","Thu Aug 28 10:42:28 WIB 2025","passed","Thu Aug 28 10:43:02 WIB 2025","[Device Catalog Feature] Edit Sensor Category Tests","","",""
