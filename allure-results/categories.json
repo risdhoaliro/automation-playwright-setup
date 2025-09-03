@@ -1,1 +1,0 @@
-[{"name":"Retries","messageRegex":".*","matchedStatuses":["skipped"]},{"name":"Failed Tests","messageRegex":".*","matchedStatuses":["failed"]},{"name":"Broken Tests","messageRegex":".*","matchedStatuses":["broken"]}]
