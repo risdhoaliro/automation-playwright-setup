@@ -1,0 +1,10 @@
+{
+  "editedData": {
+    "customId": "TEST415235",
+    "sensorName": "QA Voltage Monitor Secondary 5235",
+    "description": "Automated sensor for tracking system performance in QA testing environment. Configurable static forecast",
+    "minValue": "0",
+    "maxValue": "95"
+  },
+  "usedCreatedSensor": true
+}

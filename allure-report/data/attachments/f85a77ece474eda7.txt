@@ -1,0 +1,92 @@
+Setting up test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Success popup found, closing it...
+Successfully logged in as Client Sensor
+Sensor Management page initialized
+Generated edited sensor data: {
+  customId: 'TEST415235',
+  sensorName: 'QA Voltage Monitor Secondary 5235',
+  description: 'Automated sensor for tracking system performance in QA testing environment. Configurable static forecast',
+  minValue: '0',
+  maxValue: '95'
+}
+Navigating to Sensor Management...
+Navigated to Sensor Management
+Navigated to Sensor Management page
+Searching for sensor project: QA Automation Sensor
+Search executed and waiting for results
+Searched for: QA Automation Sensor
+Expanding sensor details...
+Page load state: networkidle
+Search input is visible
+Clicked dropdown arrow
+Clicked first caret right
+Waiting between caret clicks
+Clicked second caret right
+Expanded sensor details
+Clicking sensor cell...
+Sensor cell clicked
+Clicked sensor cell
+Clicking Edit Sensor button...
+Trying button with text-theme-primary and Edit span locator...
+button with text-theme-primary and Edit span locator failed: locator.waitFor: Timeout 3000ms exceeded.
+Call log:
+  - waiting for locator('//button[contains(@class,\'ant-btn css-49u4vm ant-btn-text\') and contains(@class,\'text-theme-primary\')]//span[normalize-space(text())=\'Edit\']') to be visible
+
+Trying button with text-theme-primary locator...
+button with text-theme-primary locator failed: locator.waitFor: Error: strict mode violation: locator('//button[contains(@class,\'text-theme-primary\')]//span[normalize-space(text())=\'Edit\']') resolved to 2 elements:
+    1) <span>Edit</span> aka locator('div').filter({ hasText: /^sensor informationEdit$/ }).getByRole('button')
+    2) <span>Edit</span> aka locator('div').filter({ hasText: /^alarm & notification settingsEdit$/ }).getByRole('button')
+
+Call log:
+  - waiting for locator('//button[contains(@class,\'text-theme-primary\')]//span[normalize-space(text())=\'Edit\']') to be visible
+
+Trying button with edit icon and Edit text locator...
+button with edit icon and Edit text locator failed: locator.waitFor: Timeout 3000ms exceeded.
+Call log:
+  - waiting for locator('//button[contains(@class,\'ant-btn css-49u4vm\')]//svg[@data-slot=\'icon\']//parent::span//following-sibling::span[normalize-space(text())=\'Edit\']//parent::button') to be visible
+
+Trying first Edit button in css-49u4vm locator...
+first Edit button in css-49u4vm locator failed: locator.waitFor: Timeout 3000ms exceeded.
+Call log:
+  - waiting for locator('//button[contains(@class,\'ant-btn css-49u4vm\')]//span[normalize-space(text())=\'Edit\']').first() to be visible
+
+Trying Edit span parent button locator...
+Edit span parent button locator failed: locator.waitFor: Error: strict mode violation: locator('//span[normalize-space(text())=\'Edit\']//parent::button[contains(@class,\'ant-btn\')]') resolved to 2 elements:
+    1) <button type="button" class="ant-btn css-18jcar6 ant-btn-text ant-btn-color-default ant-btn-variant-text flex justify-start items-center p-1 font-medium text-theme-primary">…</button> aka locator('div').filter({ hasText: /^sensor informationEdit$/ }).getByRole('button')
+    2) <button type="button" class="ant-btn css-18jcar6 ant-btn-text ant-btn-color-default ant-btn-variant-text flex justify-start items-center p-1 font-medium text-theme-primary">…</button> aka locator('div').filter({ hasText: /^alarm & notification settingsEdit$/ }).getByRole('button')
+
+Call log:
+  - waiting for locator('//span[normalize-space(text())=\'Edit\']//parent::button[contains(@class,\'ant-btn\')]') to be visible
+
+Trying first Edit button span locator...
+Scrolled to first Edit button span
+Edit Sensor button clicked using first Edit button span locator
+Clicked Edit Sensor button
+Editing custom ID: TEST415235
+Custom ID edited
+Edited custom ID: TEST415235
+Editing sensor name: QA Voltage Monitor Secondary 5235
+Sensor name edited
+Edited sensor name: QA Voltage Monitor Secondary 5235
+Editing sensor description: Automated sensor for tracking system performance in QA testing environment. Configurable static forecast
+Sensor description edited
+Edited sensor description
+Editing unit...
+Trying dropdown container locator for unit dropdown...
+Unit dropdown clicked using dropdown container locator
+Unit option selected
+Edited unit
+Editing sensor data type...
+Trying dropdown container locator for data type dropdown...
+Data type dropdown clicked using dropdown container locator
+Data type option selected
+Edited sensor data type
+Clicking Save Changes button for sensor...
+Save Changes button clicked for sensor
+Clicked Save Changes button
+Verifying sensor update success...
+Sensor update success message visibility: true
+Sensor updated successfully
+Test documentation completed
