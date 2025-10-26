@@ -1,0 +1,16 @@
+✅ Admin API automation user login successful
+Update Device Model Request (Invalid ID): {
+  "name": "QA Automation Device Model specific",
+  "device_type_id": 2,
+  "version": "1.50.43",
+  "firmware_version": "1.50.43",
+  "image_url": "https://dev-assets.synapsis.id/nearon-dev/hardware-device/20250804172402035.png",
+  "status": true
+}
+Update Device Model Response (Invalid ID): {
+  "code": 500,
+  "status": false,
+  "message": "Failed to find hardware device model",
+  "data": "Failed to find hardware device model"
+}
+✅ Invalid model ID validation completed in 76ms

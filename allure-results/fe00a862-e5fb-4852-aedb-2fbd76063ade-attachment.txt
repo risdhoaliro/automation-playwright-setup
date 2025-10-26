@@ -1,0 +1,17 @@
+✅ Admin API automation user login successful
+Create Firmware Request (Empty URL): {
+  "hardware_device_model_id": "bdbf6b07-2f4a-4d01-9c53-7dec3fd50148",
+  "version": "1.0.0",
+  "status": "Alpha",
+  "description": "<p>Test</p>",
+  "firmware_url": "",
+  "company_id": "heaewl293c",
+  "project_id": "QA005"
+}
+Create Firmware Response (Empty URL): {
+  "code": 400,
+  "status": false,
+  "message": "Field 'firmware_url' must be filled",
+  "data": "Field 'firmware_url' must be filled"
+}
+✅ Empty firmware URL validation completed in 80ms

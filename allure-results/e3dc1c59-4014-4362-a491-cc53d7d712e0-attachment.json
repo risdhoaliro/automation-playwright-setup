@@ -1,0 +1,6 @@
+{
+  "code": 400,
+  "status": false,
+  "message": "ApiKey already exists",
+  "data": "ApiKey already exists"
+}

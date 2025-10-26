@@ -1,0 +1,7 @@
+Create API Key Response (No Auth): {
+  "code": 401,
+  "status": false,
+  "message": "unauthorized",
+  "data": null
+}
+Unauthorized create attempt completed in 81ms

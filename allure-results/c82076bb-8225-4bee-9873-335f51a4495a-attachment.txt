@@ -1,0 +1,3 @@
+✅ Admin API automation user login successful
+✅ Firmware search with no matches completed in 71ms
+📊 Found 0 firmware(s) for search term: "NonExistentDeviceName123456"

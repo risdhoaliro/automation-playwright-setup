@@ -1,0 +1,17 @@
+✅ Client API automation user login successful
+Update Device Model Request: {
+  "name": "QA Automation Device Model portly",
+  "device_type_id": 3,
+  "version": "4.59.17",
+  "firmware_version": "4.59.17",
+  "image_url": "https://dev-assets.synapsis.id/nearon-dev/hardware-device/20250804172402035.png",
+  "status": false
+}
+Update Device Model Response: {
+  "code": 200,
+  "status": true,
+  "message": "Device Model updated successfully",
+  "data": null
+}
+✅ Device model updated successfully in 158ms
+📝 Updated name: QA Automation Device Model portly

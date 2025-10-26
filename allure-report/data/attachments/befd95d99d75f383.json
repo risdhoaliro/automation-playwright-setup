@@ -1,0 +1,6 @@
+{
+  "code": 201,
+  "status": true,
+  "message": "Firmware uploaded",
+  "data": "https://dev-assets.synapsis.id/nearon-dev/device-model-firmware/20251026200555084.bin"
+}

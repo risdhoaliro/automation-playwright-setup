@@ -1,0 +1,11 @@
+Admin API automation user login successful
+Cleaned up existing API Key
+First API Key created successfully
+Create Duplicate API Key Response: {
+  "code": 400,
+  "status": false,
+  "message": "ApiKey already exists",
+  "data": "ApiKey already exists"
+}
+Duplicate API Key validation completed in 167ms
+Test cleanup: API Key deleted

@@ -1,0 +1,6 @@
+{
+  "code": 500,
+  "status": false,
+  "message": "Failed to find hardware device model",
+  "data": "Failed to find hardware device model"
+}

@@ -1,0 +1,320 @@
+Response: {
+  "code": 200,
+  "status": true,
+  "message": "success",
+  "data": {
+    "id": "5fc8bfaa6baf4353a9c10523760b5db7",
+    "name": "QA API Automation Admin",
+    "username": "qaapiautomationadmin",
+    "email": "qaapiautomationadmin@mail.com",
+    "phone": [
+      "0878783176389"
+    ],
+    "avatar": null,
+    "status": "active",
+    "created_at": "2025-09-17T07:09:44.862801Z",
+    "updated_at": "2025-09-17T07:09:44.862801Z",
+    "role": {
+      "id": "1",
+      "name": "Administrator",
+      "description": "-",
+      "total_users": 171,
+      "total_permissions": 54,
+      "permissions": [
+        {
+          "id": "57",
+          "name": "Create Category Management",
+          "type": "category-management"
+        },
+        {
+          "id": "59",
+          "name": "Delete Category Management",
+          "type": "category-management"
+        },
+        {
+          "id": "58",
+          "name": "Edit Category Management",
+          "type": "category-management"
+        },
+        {
+          "id": "56",
+          "name": "View Category Management",
+          "type": "category-management"
+        },
+        {
+          "id": "38",
+          "name": "View log",
+          "type": "log"
+        },
+        {
+          "id": "17",
+          "name": "Create Actuator",
+          "type": "project-actuator"
+        },
+        {
+          "id": "20",
+          "name": "Delete Actuator",
+          "type": "project-actuator"
+        },
+        {
+          "id": "19",
+          "name": "Edit Actuator",
+          "type": "project-actuator"
+        },
+        {
+          "id": "18",
+          "name": "View Actuator",
+          "type": "project-actuator"
+        },
+        {
+          "id": "35",
+          "name": "View All Actuator",
+          "type": "project-actuator"
+        },
+        {
+          "id": "5",
+          "name": "Create Group",
+          "type": "project-group"
+        },
+        {
+          "id": "8",
+          "name": "Delete Group",
+          "type": "project-group"
+        },
+        {
+          "id": "7",
+          "name": "Edit Group",
+          "type": "project-group"
+        },
+        {
+          "id": "32",
+          "name": "View All Group",
+          "type": "project-group"
+        },
+        {
+          "id": "6",
+          "name": "View Group",
+          "type": "project-group"
+        },
+        {
+          "id": "9",
+          "name": "Create Node",
+          "type": "project-node"
+        },
+        {
+          "id": "12",
+          "name": "Delete Node",
+          "type": "project-node"
+        },
+        {
+          "id": "11",
+          "name": "Edit Node",
+          "type": "project-node"
+        },
+        {
+          "id": "33",
+          "name": "View All Node",
+          "type": "project-node"
+        },
+        {
+          "id": "10",
+          "name": "View Node",
+          "type": "project-node"
+        },
+        {
+          "id": "1",
+          "name": "Create Project",
+          "type": "project-project"
+        },
+        {
+          "id": "4",
+          "name": "Delete Project",
+          "type": "project-project"
+        },
+        {
+          "id": "3",
+          "name": "Edit Project",
+          "type": "project-project"
+        },
+        {
+          "id": "31",
+          "name": "View All Project",
+          "type": "project-project"
+        },
+        {
+          "id": "2",
+          "name": "View Project",
+          "type": "project-project"
+        },
+        {
+          "id": "13",
+          "name": "Create Sensor",
+          "type": "project-sensor"
+        },
+        {
+          "id": "16",
+          "name": "Delete Sensor",
+          "type": "project-sensor"
+        },
+        {
+          "id": "15",
+          "name": "Edit Sensor",
+          "type": "project-sensor"
+        },
+        {
+          "id": "34",
+          "name": "View All Sensor",
+          "type": "project-sensor"
+        },
+        {
+          "id": "14",
+          "name": "View Sensor",
+          "type": "project-sensor"
+        },
+        {
+          "id": "45",
+          "name": "Create Role",
+          "type": "role"
+        },
+        {
+          "id": "44",
+          "name": "Delete Role",
+          "type": "role"
+        },
+        {
+          "id": "30",
+          "name": "Edit Role",
+          "type": "role"
+        },
+        {
+          "id": "29",
+          "name": "View Role",
+          "type": "role"
+        },
+        {
+          "id": "25",
+          "name": "Create Secret Key",
+          "type": "secret key"
+        },
+        {
+          "id": "28",
+          "name": "Delete Secret Key",
+          "type": "secret key"
+        },
+        {
+          "id": "27",
+          "name": "Edit Secret Key",
+          "type": "secret key"
+        },
+        {
+          "id": "36",
+          "name": "View All Secret Key",
+          "type": "secret key"
+        },
+        {
+          "id": "26",
+          "name": "View Secret Key",
+          "type": "secret key"
+        },
+        {
+          "id": "39",
+          "name": "Edit Application & Company Setting",
+          "type": "setting"
+        },
+        {
+          "id": "46",
+          "name": "View Setting",
+          "type": "setting"
+        },
+        {
+          "id": "49",
+          "name": "Create Ticket",
+          "type": "ticketing"
+        },
+        {
+          "id": "51",
+          "name": "Delete Ticket",
+          "type": "ticketing"
+        },
+        {
+          "id": "48",
+          "name": "Detail Ticket",
+          "type": "ticketing"
+        },
+        {
+          "id": "50",
+          "name": "Edit Ticket",
+          "type": "ticketing"
+        },
+        {
+          "id": "47",
+          "name": "View Ticketing Report",
+          "type": "ticketing"
+        },
+        {
+          "id": "53",
+          "name": "Create Unit Management",
+          "type": "unit-management"
+        },
+        {
+          "id": "55",
+          "name": "Delete Unit Management",
+          "type": "unit-management"
+        },
+        {
+          "id": "54",
+          "name": "Edit Unit Management",
+          "type": "unit-management"
+        },
+        {
+          "id": "52",
+          "name": "View Unit Management",
+          "type": "unit-management"
+        },
+        {
+          "id": "21",
+          "name": "Create User",
+          "type": "user"
+        },
+        {
+          "id": "24",
+          "name": "Delete User",
+          "type": "user"
+        },
+        {
+          "id": "23",
+          "name": "Edit User",
+          "type": "user"
+        },
+        {
+          "id": "22",
+          "name": "View User",
+          "type": "user"
+        }
+      ]
+    },
+    "project_role": null,
+    "firmware_user": "b4brkev6mh",
+    "firmware_password": "o5E5xvKlrY",
+    "projects": [],
+    "telegram": [
+      "qaapiautomationadmin"
+    ],
+    "telegram_chat_ids": null,
+    "notification_enabled": false,
+    "license": null,
+    "company_id": null
+  }
+}
+✅ Admin API automation user login successful
+File exists: true
+File path: ./src/asset/nearon_logo.bin
+Custom Filename: firmware_v1.0.0_1761509154721.bin
+Upload Response: {
+  "code": 201,
+  "status": true,
+  "message": "Firmware uploaded",
+  "data": "https://dev-assets.synapsis.id/nearon-dev/device-model-firmware/20251026200555084.bin"
+}
+✅ BIN firmware upload with custom filename completed in 326ms
+📦 Firmware URL: https://dev-assets.synapsis.id/nearon-dev/device-model-firmware/20251026200555084.bin
