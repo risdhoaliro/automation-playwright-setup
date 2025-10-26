@@ -1,0 +1,3 @@
+✅ Client API automation user login successful
+✅ Firmware search completed in 95ms
+📊 Found 20 firmware(s) with hardware_device_name: "QA Automation Sensor"

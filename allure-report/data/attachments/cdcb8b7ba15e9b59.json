@@ -1,0 +1,9 @@
+{
+  "code": 200,
+  "status": true,
+  "message": "success",
+  "page": 1,
+  "count": 0,
+  "total": 0,
+  "data": null
+}

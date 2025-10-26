@@ -1,0 +1,404 @@
+Response: {
+  "code": 200,
+  "status": true,
+  "message": "success",
+  "data": {
+    "id": "de2007880cb348e89888d0f99e014d31",
+    "name": "QA Ris Api Automation",
+    "username": "qaapiautomation",
+    "email": "apiautomation@mail.com",
+    "phone": [
+      "087832872477"
+    ],
+    "avatar": "//user/de2007880cb348e89888d0f99e014d31-20250916064256689.png",
+    "status": "active",
+    "created_at": "2025-09-16T05:06:35.468916Z",
+    "updated_at": "2025-09-21T08:59:16.31118Z",
+    "role": {
+      "id": "2",
+      "name": "Customer",
+      "description": "",
+      "total_users": 18,
+      "total_permissions": 1,
+      "permissions": [
+        {
+          "id": "22",
+          "name": "View User",
+          "type": "user"
+        }
+      ]
+    },
+    "project_role": [
+      {
+        "id": "f0bdb68c7aa5440388a96c680e023ec1",
+        "name": "Administrator",
+        "project_id": "QA100",
+        "description": "",
+        "total_users": 62,
+        "total_permissions": 66,
+        "permissions": [
+          {
+            "id": "57",
+            "name": "Create Category Management",
+            "type": "category-management"
+          },
+          {
+            "id": "59",
+            "name": "Delete Category Management",
+            "type": "category-management"
+          },
+          {
+            "id": "58",
+            "name": "Edit Category Management",
+            "type": "category-management"
+          },
+          {
+            "id": "56",
+            "name": "View Category Management",
+            "type": "category-management"
+          },
+          {
+            "id": "68",
+            "name": "Create CCTV",
+            "type": "cctv-management"
+          },
+          {
+            "id": "70",
+            "name": "Delete CCTV",
+            "type": "cctv-management"
+          },
+          {
+            "id": "69",
+            "name": "Edit CCTV",
+            "type": "cctv-management"
+          },
+          {
+            "id": "67",
+            "name": "View CCTV Management",
+            "type": "cctv-management"
+          },
+          {
+            "id": "72",
+            "name": "Control CCTV",
+            "type": "cctv-monitoring"
+          },
+          {
+            "id": "73",
+            "name": "Detail CCTV",
+            "type": "cctv-monitoring"
+          },
+          {
+            "id": "71",
+            "name": "View CCTV Monitoring",
+            "type": "cctv-monitoring"
+          },
+          {
+            "id": "61",
+            "name": "Edit Customize Chart",
+            "type": "dashboard-monitoring"
+          },
+          {
+            "id": "60",
+            "name": "View Dashboard Monitoring",
+            "type": "dashboard-monitoring"
+          },
+          {
+            "id": "40",
+            "name": "Create Field",
+            "type": "field"
+          },
+          {
+            "id": "43",
+            "name": "Delete Field",
+            "type": "field"
+          },
+          {
+            "id": "42",
+            "name": "Edit Field",
+            "type": "field"
+          },
+          {
+            "id": "41",
+            "name": "View Field",
+            "type": "field"
+          },
+          {
+            "id": "38",
+            "name": "View log",
+            "type": "log"
+          },
+          {
+            "id": "17",
+            "name": "Create Actuator",
+            "type": "project-actuator"
+          },
+          {
+            "id": "20",
+            "name": "Delete Actuator",
+            "type": "project-actuator"
+          },
+          {
+            "id": "19",
+            "name": "Edit Actuator",
+            "type": "project-actuator"
+          },
+          {
+            "id": "18",
+            "name": "View Actuator",
+            "type": "project-actuator"
+          },
+          {
+            "id": "5",
+            "name": "Create Group",
+            "type": "project-group"
+          },
+          {
+            "id": "8",
+            "name": "Delete Group",
+            "type": "project-group"
+          },
+          {
+            "id": "7",
+            "name": "Edit Group",
+            "type": "project-group"
+          },
+          {
+            "id": "6",
+            "name": "View Group",
+            "type": "project-group"
+          },
+          {
+            "id": "9",
+            "name": "Create Node",
+            "type": "project-node"
+          },
+          {
+            "id": "12",
+            "name": "Delete Node",
+            "type": "project-node"
+          },
+          {
+            "id": "11",
+            "name": "Edit Node",
+            "type": "project-node"
+          },
+          {
+            "id": "10",
+            "name": "View Node",
+            "type": "project-node"
+          },
+          {
+            "id": "1",
+            "name": "Create Project",
+            "type": "project-project"
+          },
+          {
+            "id": "4",
+            "name": "Delete Project",
+            "type": "project-project"
+          },
+          {
+            "id": "3",
+            "name": "Edit Project",
+            "type": "project-project"
+          },
+          {
+            "id": "2",
+            "name": "View Project",
+            "type": "project-project"
+          },
+          {
+            "id": "13",
+            "name": "Create Sensor",
+            "type": "project-sensor"
+          },
+          {
+            "id": "16",
+            "name": "Delete Sensor",
+            "type": "project-sensor"
+          },
+          {
+            "id": "15",
+            "name": "Edit Sensor",
+            "type": "project-sensor"
+          },
+          {
+            "id": "14",
+            "name": "View Sensor",
+            "type": "project-sensor"
+          },
+          {
+            "id": "63",
+            "name": "Create Report Settings",
+            "type": "report-management"
+          },
+          {
+            "id": "65",
+            "name": "Delete Report Settings",
+            "type": "report-management"
+          },
+          {
+            "id": "64",
+            "name": "Edit Report Settings",
+            "type": "report-management"
+          },
+          {
+            "id": "66",
+            "name": "View & Download File",
+            "type": "report-management"
+          },
+          {
+            "id": "62",
+            "name": "View Report Management",
+            "type": "report-management"
+          },
+          {
+            "id": "45",
+            "name": "Create Role",
+            "type": "role"
+          },
+          {
+            "id": "44",
+            "name": "Delete Role",
+            "type": "role"
+          },
+          {
+            "id": "30",
+            "name": "Edit Role",
+            "type": "role"
+          },
+          {
+            "id": "29",
+            "name": "View Role",
+            "type": "role"
+          },
+          {
+            "id": "25",
+            "name": "Create Secret Key",
+            "type": "secret key"
+          },
+          {
+            "id": "28",
+            "name": "Delete Secret Key",
+            "type": "secret key"
+          },
+          {
+            "id": "27",
+            "name": "Edit Secret Key",
+            "type": "secret key"
+          },
+          {
+            "id": "26",
+            "name": "View Secret Key",
+            "type": "secret key"
+          },
+          {
+            "id": "39",
+            "name": "Edit Application & Company Setting",
+            "type": "setting"
+          },
+          {
+            "id": "46",
+            "name": "View Setting",
+            "type": "setting"
+          },
+          {
+            "id": "49",
+            "name": "Create Ticket",
+            "type": "ticketing"
+          },
+          {
+            "id": "51",
+            "name": "Delete Ticket",
+            "type": "ticketing"
+          },
+          {
+            "id": "48",
+            "name": "Detail Ticket",
+            "type": "ticketing"
+          },
+          {
+            "id": "50",
+            "name": "Edit Ticket",
+            "type": "ticketing"
+          },
+          {
+            "id": "47",
+            "name": "View Ticketing Report",
+            "type": "ticketing"
+          },
+          {
+            "id": "53",
+            "name": "Create Unit Management",
+            "type": "unit-management"
+          },
+          {
+            "id": "55",
+            "name": "Delete Unit Management",
+            "type": "unit-management"
+          },
+          {
+            "id": "54",
+            "name": "Edit Unit Management",
+            "type": "unit-management"
+          },
+          {
+            "id": "52",
+            "name": "View Unit Management",
+            "type": "unit-management"
+          },
+          {
+            "id": "21",
+            "name": "Create User",
+            "type": "user"
+          },
+          {
+            "id": "24",
+            "name": "Delete User",
+            "type": "user"
+          },
+          {
+            "id": "23",
+            "name": "Edit User",
+            "type": "user"
+          },
+          {
+            "id": "22",
+            "name": "View User",
+            "type": "user"
+          }
+        ]
+      }
+    ],
+    "firmware_user": "zrxb62vnnq",
+    "firmware_password": "Ywbi06Lb5O",
+    "projects": [
+      "QA100"
+    ],
+    "telegram": [
+      "rahasiaaak"
+    ],
+    "telegram_chat_ids": null,
+    "notification_enabled": true,
+    "license": {
+      "id": "dwvpgt6ldm",
+      "is_active": true,
+      "expired_at": 0,
+      "key": "e395fe86ca125a78a6a1ee74582842e1315b5f814496524a96db9836a28383b8",
+      "package": "QA API Automation"
+    },
+    "company_id": "ajbdjyzk1w"
+  }
+}
+✅ Client API automation user login successful
+File exists: true
+File path: ./src/asset/nearon_logo.bin
+Filename: nearon_logo.bin
+Upload Response: {
+  "code": 201,
+  "status": true,
+  "message": "Firmware uploaded",
+  "data": "https://dev-assets.synapsis.id/nearon-dev/device-model-firmware/20251026165606780.bin"
+}
+✅ BIN firmware upload completed in 365ms
+📦 Firmware URL: https://dev-assets.synapsis.id/nearon-dev/device-model-firmware/20251026165606780.bin

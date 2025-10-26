@@ -1,0 +1,18 @@
+🚀 API Interceptor enabled for Device Model API tests
+✅ Admin API automation user login successful
+Update Device Model Request: {
+  "name": "QA Automation Device Model pushy",
+  "device_type_id": 2,
+  "version": "5.81.32",
+  "firmware_version": "5.81.32",
+  "image_url": "https://dev-assets.synapsis.id/nearon-dev/hardware-device/20250804172402035.png",
+  "status": false
+}
+Update Device Model Response: {
+  "code": 200,
+  "status": true,
+  "message": "Device Model updated successfully",
+  "data": null
+}
+✅ Device model updated successfully in 134ms
+📝 Updated name: QA Automation Device Model pushy

@@ -1,0 +1,6 @@
+{
+  "code": 400,
+  "status": false,
+  "message": "File Extenstion must One of : bin,rar,zip",
+  "data": "File Extenstion must One of : bin,rar,zip"
+}

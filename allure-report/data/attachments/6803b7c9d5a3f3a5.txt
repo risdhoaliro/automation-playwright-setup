@@ -1,0 +1,17 @@
+✅ Admin API automation user login successful
+Create Firmware Request (Empty Version): {
+  "hardware_device_model_id": "bdbf6b07-2f4a-4d01-9c53-7dec3fd50148",
+  "version": "",
+  "status": "Alpha",
+  "description": "<p>Test</p>",
+  "firmware_url": "https://dev-assets.synapsis.id/nearon-dev/device-model-firmware/20251026165612978.bin",
+  "company_id": "heaewl293c",
+  "project_id": "QA005"
+}
+Create Firmware Response (Empty Version): {
+  "code": 400,
+  "status": false,
+  "message": "Field 'version' must be filled",
+  "data": "Field 'version' must be filled"
+}
+✅ Empty version validation completed in 93ms
