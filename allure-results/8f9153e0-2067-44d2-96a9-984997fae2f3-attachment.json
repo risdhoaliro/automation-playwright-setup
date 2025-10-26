@@ -1,6 +1,0 @@
-{
-  "code": 400,
-  "status": false,
-  "message": "Field 'firmware_url' must be filled",
-  "data": "Field 'firmware_url' must be filled"
-}
