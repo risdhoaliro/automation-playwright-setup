@@ -1,4 +1,0 @@
-🚀 API Interceptor enabled for Device Firmware Search API tests
-✅ Admin API automation user login successful
-✅ Firmware search completed in 77ms
-📊 Found 22 firmware(s) with hardware_device_name: "QA Automation Sensor"
