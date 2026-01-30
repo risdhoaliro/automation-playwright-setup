@@ -1,0 +1,19 @@
+Setting up test environment...
+Starting Mitra Login setup...
+Logging in as mitra...
+Success popup found, closing it...
+Successfully logged in as Client/Mitra
+CCTV Monitoring page initialized
+Navigating to CCTV Monitoring...
+Navigated to CCTV Monitoring
+Navigated to CCTV Monitoring page
+Searching for CCTV: QA UI Automation
+Search executed and waiting for results
+Searched for CCTV: QA UI Automation
+Clicking CCTV card...
+CCTV card clicked
+Clicked on CCTV card
+Verifying CCTV title: QA UI Automation
+CCTV title verified successfully
+CCTV title verified
+Test documentation completed
